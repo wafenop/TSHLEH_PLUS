@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نتائج البحث - تشليح بلس</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/search-results.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Font for Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header id="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="تشليح بلس - سوق قطع غيار السيارات المستعملة">
+                    <span class="logo-text">تشليح بلس</span>
+                </a>
+            </div>
+<nav class="main-nav">
+    <ul>
+        <li><a href="index.html" data-en="Home" data-ar="الرئيسية">الرئيسية</a></li>
+        <li><a href="search.html" class="active" data-en="Search Parts" data-ar="بحث قطع">بحث قطع</a></li>
+        <li><a href="auctions.html" data-en="Car Auctions" data-ar="مزادات السيارات">مزادات السيارات</a>
+        </li>
+        <li><a href="employee.html" data-en="Employee Portal" data-ar="بوابة الموظفين">بوابة الموظفين</a></li>
+    </ul>
+</nav>
+            <div class="user-actions">
+                <div class="language-switcher">
+                    <button id="lang-toggle" data-current="ar">
+                        <span data-en="العربية" data-ar="English">English</span>
+                    </button>
+                </div>
+                <div class="auth-buttons">
+                    <a href="login.html" class="btn btn-outline" data-en="Login" data-ar="تسجيل الدخول">تسجيل الدخول</a>
+                    <a href="register.html" class="btn btn-primary" data-en="Register" data-ar="التسجيل">التسجيل</a>
+                </div>
+                <div class="user-profile hidden">
+                    <a href="profile.html">
+                        <img src="images/user-placeholder.png" alt="الملف الشخصي للمستخدم">
+                    </a>
+                </div>
+            </div>
+            <button class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Page Title -->
+    <section class="page-title">
+        <div class="container">
+            <h1 id="search-title" data-en="Search Results" data-ar="نتائج البحث">نتائج البحث</h1>
+            <div class="breadcrumbs">
+                <a href="index.html" data-en="Home" data-ar="الرئيسية">الرئيسية</a>
+                <span class="separator">/</span>
+                <span data-en="Search Results" data-ar="نتائج البحث">نتائج البحث</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Results Section -->
+    <section class="search-results-section">
+        <div class="container">
+            <div class="search-results-container">
+                <!-- Filters Sidebar -->
+                <div class="filters-sidebar">
+                    <div class="filter-header">
+                        <h3 data-en="Filters" data-ar="فلترة النتائج">فلترة النتائج</h3>
+                        <button class="clear-filters" data-en="Clear All" data-ar="مسح الكل">مسح الكل</button>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4 data-en="Part Condition" data-ar="حالة القطعة">حالة القطعة</h4>
+                        <div class="filter-options">
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="condition" value="excellent">
+                                <span class="checkmark"></span>
+                                <span class="label-text" data-en="Excellent" data-ar="ممتازة">ممتازة</span>
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="condition" value="good">
+                                <span class="checkmark"></span>
+                                <span class="label-text" data-en="Good" data-ar="جيدة">جيدة</span>
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="condition" value="average">
+                                <span class="checkmark"></span>
+                                <span class="label-text" data-en="Average" data-ar="متوسطة">متوسطة</span>
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="condition" value="needs-repair">
+                                <span class="checkmark"></span>
+                                <span class="label-text" data-en="Needs Repair" data-ar="تحتاج إصلاح">تحتاج إصلاح</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4 data-en="Price Range" data-ar="نطاق السعر">نطاق السعر</h4>
+                        <div class="price-range">
+                            <div class="price-inputs">
+                                <div class="input-wrapper">
+                                    <input type="number" id="min-price" placeholder="0" min="0">
+                                    <span class="currency">ريال</span>
+                                </div>
+                                <span class="price-separator">-</span>
+                                <div class="input-wrapper">
+                                    <input type="number" id="max-price" placeholder="5000" min="0">
+                                    <span class="currency">ريال</span>
+                                </div>
+                            </div>
+                            <button class="apply-price" data-en="Apply" data-ar="تطبيق">تطبيق</button>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4 data-en="Salvage Yard Rating" data-ar="تقييم التشليح">تقييم التشليح</h4>
+                        <div class="filter-options">
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="rating" value="4.5">
+                                <span class="checkmark"></span>
+                                <span class="label-text">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span data-en="4.5 & Up" data-ar="4.5 وأعلى">4.5 وأعلى</span>
+                                </span>
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="rating" value="4.0">
+                                <span class="checkmark"></span>
+                                <span class="label-text">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <span data-en="4.0 & Up" data-ar="4.0 وأعلى">4.0 وأعلى</span>
+                                </span>
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="rating" value="3.5">
+                                <span class="checkmark"></span>
+                                <span class="label-text">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <span data-en="3.5 & Up" data-ar="3.5 وأعلى">3.5 وأعلى</span>
+                                </span>
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="rating" value="3.0">
+                                <span class="checkmark"></span>
+                                <span class="label-text">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <span data-en="3.0 & Up" data-ar="3.0 وأعلى">3.0 وأعلى</span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4 data-en="Location" data-ar="الموقع">الموقع</h4>
+                        <div class="filter-options">
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="location" value="madinah">
+                                <span class="checkmark"></span>
+                                <span class="label-text" data-en="Madinah" data-ar="المدينة المنورة">المدينة
+                                    المنورة</span>
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="location" value="riyadh">
+                                <span class="checkmark"></span>
+                                <span class="label-text" data-en="Riyadh" data-ar="الرياض">الرياض</span>
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="location" value="jeddah">
+                                <span class="checkmark"></span>
+                                <span class="label-text" data-en="Jeddah" data-ar="جدة">جدة</span>
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="location" value="dammam">
+                                <span class="checkmark"></span>
+                                <span class="label-text" data-en="Dammam" data-ar="الدمام">الدمام</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results Content -->
+                <div class="results-content">
+                    <!-- Search Summary and Controls -->
+                    <div class="results-header">
+                        <div class="results-count">
+                            <p>
+                                <span class="count-number">24</span>
+                                <span data-en="results found" data-ar="نتيجة">نتيجة</span>
+                            </p>
+                        </div>
+                        <div class="results-controls">
+                            <div class="sort-options">
+                                <label for="sort-by" data-en="Sort by:" data-ar="ترتيب حسب:">ترتيب حسب:</label>
+                                <select id="sort-by" class="sort-select">
+                                    <option value="price-asc" data-en="Price: Low to High"
+                                        data-ar="السعر: من الأقل إلى الأعلى">السعر: من الأقل إلى الأعلى</option>
+                                    <option value="price-desc" data-en="Price: High to Low"
+                                        data-ar="السعر: من الأعلى إلى الأقل">السعر: من الأعلى إلى الأقل</option>
+                                    <option value="rating-desc" data-en="Rating: High to Low"
+                                        data-ar="التقييم: من الأعلى إلى الأقل">التقييم: من الأعلى إلى الأقل</option>
+                                    <option value="date-desc" data-en="Newest First" data-ar="الأحدث أولاً">الأحدث أولاً
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="view-toggle">
+                                <button class="toggle-btn grid-view active" title="عرض شبكي">
+                                    <i class="fas fa-th-large"></i>
+                                </button>
+                                <button class="toggle-btn list-view" title="عرض قائمة">
+                                    <i class="fas fa-list"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Parts Grid -->
+                    <div class="parts-grid">
+                        <!-- Part Card 1 -->
+                        <div class="part-card">
+                            <div class="part-images">
+                                <div class="main-image">
+                                    <img src="images/parts/engine-cover.png" alt="غطاء محرك تويوتا كامري 2018">
+                                </div>
+                                <div class="condition excellent">
+                                    <span data-en="Excellent" data-ar="ممتازة">ممتازة</span>
+                                </div>
+                            </div>
+                            <div class="part-details">
+                                <h3> محرك تويوتا كامري 2018</h3>
+                                <div class="part-meta">
+                                    <div class="car-info">تويوتا كامري 2018</div>
+                                    <div class="yard-info">
+                                        <a href="salvage-yard.html?id=1">تشليح المدينة للسيارات</a>
+                                        <div class="yard-rating">
+                                            <i class="fas fa-star"></i>
+                                            <span>4.8</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="part-price-actions">
+                                    <div class="price">4566 ريال</div>
+                                    <div class="actions">
+                                        <a href="part-details.html?id=1" class="btn btn-primary" data-en="View Details"
+                                            data-ar="عرض التفاصيل">عرض التفاصيل</a>
+                                        <button class="btn-favorite" title="إضافة للمفضلة">
+                                            <i class="far fa-heart"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Part Card 2 -->
+                        <div class="part-card">
+                            <div class="part-images">
+                                <div class="main-image">
+                                    <img src="images/parts/transmission.png" alt="ناقل حركة هوندا أكورد 2017">
+                                </div>
+                                <div class="condition good">
+                                    <span data-en="Good" data-ar="جيدة">جيدة</span>
+                                </div>
+                            </div>
+                            <div class="part-details">
+                                <h3>ناقل حركة هوندا أكورد 2017</h3>
+                                <div class="part-meta">
+                                    <div class="car-info">هوندا أكورد 2017</div>
+                                    <div class="yard-info">
+                                        <a href="salvage-yard.html?id=2">المركز السعودي للتشليح</a>
+                                        <div class="yard-rating">
+                                            <i class="fas fa-star"></i>
+                                            <span>4.6</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="part-price-actions">
+                                    <div class="price">3,723 ريال</div>
+                                    <div class="actions">
+                                        <a href="part-details.html?id=2" class="btn btn-primary" data-en="View Details"
+                                            data-ar="عرض التفاصيل">عرض التفاصيل</a>
+                                        <button class="btn-favorite" title="إضافة للمفضلة">
+                                            <i class="far fa-heart"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Part Card 3 -->
+                        <div class="part-card">
+                            <div class="part-images">
+                                <div class="main-image">
+                                    <img src="images/parts/headlight.png" alt="مصباح أمامي نيسان التيما 2019">
+                                </div>
+                                <div class="condition average">
+                                    <span data-en="Average" data-ar="متوسطة">متوسطة</span>
+                                </div>
+                            </div>
+                            <div class="part-details">
+                                <h3>شمعة أمامي يسار نيسان التيما 2019</h3>
+                                <div class="part-meta">
+                                    <div class="car-info">نيسان التيما 2019</div>
+                                    <div class="yard-info">
+                                        <a href="salvage-yard.html?id=3">تشليح المدينة للقطع والخدمات</a>
+                                        <div class="yard-rating">
+                                            <i class="fas fa-star"></i>
+                                            <span>4.5</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="part-price-actions">
+                                    <div class="price">460 ريال</div>
+                                    <div class="actions">
+                                        <a href="part-details.html?id=3" class="btn btn-primary" data-en="View Details"
+                                            data-ar="عرض التفاصيل">عرض التفاصيل</a>
+                                        <button class="btn-favorite" title="إضافة للمفضلة">
+                                            <i class="far fa-heart"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Part Card 4 -->
+                        <div class="part-card">
+                            <div class="part-images">
+                                <div class="main-image">
+                                    <img src="images/parts/door.png" alt="باب أمامي يمين فورد إكسبلورر 2020">
+                                </div>
+                                <div class="condition excellent">
+                                    <span data-en="Excellent" data-ar="ممتازة">ممتازة</span>
+                                </div>
+                            </div>
+                            <div class="part-details">
+                                <h3>باب أمامي يسار فورد إكسبلورر 2020</h3>
+                                <div class="part-meta">
+                                    <div class="car-info">فورد إكسبلورر 2020</div>
+                                    <div class="yard-info">
+                                        <a href="salvage-yard.html?id=1">تشليح المدينة للسيارات</a>
+                                        <div class="yard-rating">
+                                            <i class="fas fa-star"></i>
+                                            <span>4.8</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="part-price-actions">
+                                    <div class="price">1,200 ريال</div>
+                                    <div class="actions">
+                                        <a href="part-details.html?id=4" class="btn btn-primary" data-en="View Details"
+                                            data-ar="عرض التفاصيل">عرض التفاصيل</a>
+                                        <button class="btn-favorite" title="إضافة للمفضلة">
+                                            <i class="far fa-heart"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Part Card 5 -->
+                        <div class="part-card">
+                            <div class="part-images">
+                                <div class="main-image">
+                                    <img src="images/parts/bumper.png" alt="صدام خلفي تويوتا كورولا 2019">
+                                </div>
+                                <div class="condition good">
+                                    <span data-en="Good" data-ar="جيدة">جيدة</span>
+                                </div>
+                            </div>
+                            <div class="part-details">
+                                <h3>صدام خلفي تويوتا كورولا 2019</h3>
+                                <div class="part-meta">
+                                    <div class="car-info">تويوتا كورولا 2019</div>
+                                    <div class="yard-info">
+                                        <a href="salvage-yard.html?id=2">المركز السعودي للتشليح</a>
+                                        <div class="yard-rating">
+                                            <i class="fas fa-star"></i>
+                                            <span>4.6</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="part-price-actions">
+                                    <div class="price">400 ريال</div>
+                                    <div class="actions">
+                                        <a href="part-details.html?id=5" class="btn btn-primary" data-en="View Details"
+                                            data-ar="عرض التفاصيل">عرض التفاصيل</a>
+                                        <button class="btn-favorite" title="إضافة للمفضلة">
+                                            <i class="far fa-heart"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Part Card 6 -->
+                        <div class="part-card">
+                            <div class="part-images">
+                                <div class="main-image">
+                                    <img src="images/parts/radiator.png"
+                                        alt="مبرد (رادييتر) بي ام دبليو الفئة الخامسة 2018">
+                                </div>
+                                <div class="condition needs-repair">
+                                    <span data-en="Needs Repair" data-ar="تحتاج إصلاح">تحتاج إصلاح</span>
+                                </div>
+                            </div>
+                            <div class="part-details">
+                                <h3>مبرد (رادييتر) بي ام دبليو الفئة الخامسة 2018</h3>
+                                <div class="part-meta">
+                                    <div class="car-info">بي ام دبليو الفئة الخامسة 2018</div>
+                                    <div class="yard-info">
+                                        <a href="salvage-yard.html?id=3">تشليح المدينة للقطع والخدمات</a>
+                                        <div class="yard-rating">
+                                            <i class="fas fa-star"></i>
+                                            <span>4.5</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="part-price-actions">
+                                    <div class="price">350 ريال</div>
+                                    <div class="actions">
+                                        <a href="part-details.html?id=6" class="btn btn-primary" data-en="View Details"
+                                            data-ar="عرض التفاصيل">عرض التفاصيل</a>
+                                        <button class="btn-favorite" title="إضافة للمفضلة">
+                                            <i class="far fa-heart"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="pagination">
+                        <a href="#" class="prev-page" title="الصفحة السابقة">
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                        <div class="page-numbers">
+                            <a href="#" class="active">1</a>
+                            <a href="#">2</a>
+                            <a href="#">3</a>
+                            <span class="page-dots">...</span>
+                            <a href="#">8</a>
+                        </div>
+                        <a href="#" class="next-page" title="الصفحة التالية">
+                            <i class="fas fa-chevron-left"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compare Parts Button -->
+    <div class="compare-fixed-button">
+        <button class="compare-btn">
+            <i class="fas fa-exchange-alt"></i>
+            <span data-en="Compare Parts (3)" data-ar="مقارنة القطع (3)">مقارنة القطع (3)</span>
+        </button>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <img src="images/logo-white.png" alt="تشليح بلس" class="footer-logo">
+                    <div class="logo-text-footer">تشليح بلس</div>
+<!-- الكود الصحيح -->
+<p data-en="Connecting customers with quality used auto parts across the region."
+   data-ar="ربط العملاء بقطع غيار السيارات المستعملة عالية الجودة في جميع أنحاء المنطقة.">
+   ربط العملاء بقطع غيار السيارات المستعملة عالية الجودة في جميع أنحاء المنطقة.
+</p>
+                </div>
+                <div class="footer-links">
+                    <h3 data-en="Quick Links" data-ar="روابط سريعة">روابط سريعة</h3>
+                    <ul>
+                        <li><a href="index.html" data-en="Home" data-ar="الرئيسية">الرئيسية</a></li>
+                        <li><a href="search.html" data-en="Search Parts" data-ar="البحث عن قطع">البحث عن قطع</a></li>
+                        <li><a href="auctions.html" data-en="Car Auctions" data-ar="مزادات السيارات">مزادات السيارات</a>
+                        </li>
+                        <li><a href="salvage-yards.html" data-en="Salvage Yards" data-ar="التشاليح">التشاليح</a></li>
+                        <li><a href="register.html" data-en="Register" data-ar="التسجيل">التسجيل</a></li>
+                        <li><a href="login.html" data-en="Login" data-ar="تسجيل الدخول">تسجيل الدخول</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3 data-en="Contact Us" data-ar="اتصل بنا">اتصل بنا</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> المدينة المنورة, المملكة العربية السعودية</p>
+                    <p><i class="fas fa-phone"></i> +966 123 456 789</p>
+                    <p><i class="fas fa-envelope"></i> info@tashleeh-plus.sa</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-support">
+                    <h3 data-en="Support" data-ar="الدعم">الدعم</h3>
+                    <ul>
+                        <li><a href="faq.html" data-en="FAQ" data-ar="الأسئلة الشائعة">الأسئلة الشائعة</a></li>
+                        <li><a href="contact.html" data-en="Contact Support" data-ar="الاتصال بالدعم">الاتصال بالدعم</a>
+                        </li>
+                        <li><a href="privacy.html" data-en="Privacy Policy" data-ar="سياسة الخصوصية">سياسة الخصوصية</a>
+                        </li>
+                        <li><a href="terms.html" data-en="Terms of Service" data-ar="شروط الخدمة">شروط الخدمة</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 تشليح بلس. <span data-en="All Rights Reserved" data-ar="جميع الحقوق محفوظة">جميع الحقوق
+                        محفوظة</span>.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/language.js"></script>
+    <script src="js/mobile-menu.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/search-results.js"></script>
+</body>
+
+</html>

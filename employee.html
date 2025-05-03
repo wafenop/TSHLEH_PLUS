@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بوابة الموظفين - تشليح بلس</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/employee.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Font for Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header id="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="تشليح بلس - سوق قطع غيار السيارات المستعملة">
+                    <span class="logo-text">تشليح بلس</span>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" data-en="Home" data-ar="الرئيسية">الرئيسية</a></li>
+                    <li><a href="search-results.html" data-en="Search Parts" data-ar="بحث قطع">بحث قطع</a></li>
+                    <li><a href="auctions.html" data-en="Car Auctions" data-ar="مزادات السيارات">مزادات السيارات</a>
+                    </li>
+                    <li><a href="employee.html" class="active" data-en="Employee Portal" data-ar="بوابة الموظفين">بوابة
+                            الموظفين</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <div class="language-switcher">
+                    <button id="lang-toggle" data-current="ar">
+                        <span data-en="العربية" data-ar="English">English</span>
+                    </button>
+                </div>
+                <div class="auth-buttons">
+                    <a href="login.html" class="btn btn-outline" data-en="Login" data-ar="تسجيل الدخول">تسجيل الدخول</a>
+                    <a href="register.html" class="btn btn-primary" data-en="Register" data-ar="التسجيل">التسجيل</a>
+                </div>
+                <div class="user-profile hidden">
+                    <a href="profile.html">
+                        <img src="images/user-placeholder.png" alt="الملف الشخصي للمستخدم">
+                    </a>
+                </div>
+            </div>
+            <button class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Page Title -->
+    <section class="page-title">
+        <div class="container">
+            <h1 data-en="Employee Portal" data-ar="بوابة الموظفين">بوابة الموظفين</h1>
+            <div class="breadcrumbs">
+                <a href="index.html" data-en="Home" data-ar="الرئيسية">الرئيسية</a>
+                <span class="separator">/</span>
+                <span data-en="Employee Portal" data-ar="بوابة الموظفين">بوابة الموظفين</span>
+            </div>
+        </div>
+    </section>
+
+<!-- Employee Dashboard Section -->
+<section class="employee-dashboard-section">
+    <div class="container">
+        <div class="employee-dashboard-container">
+            <!-- Sidebar -->
+            <div class="employee-sidebar">
+                <div class="employee-info">
+                    <div class="employee-avatar">
+                        <img src="images/employee-photo.jpg" alt="صورة الموظف">
+                    </div>
+                    <h3 class="employee-name" data-en="Welcome, Mohammad Ali" data-ar="مرحباً بك، محمد علي">مرحباً بك،
+                        محمد علي</h3>
+                    <p class="employee-role" data-en="Data Entry Specialist" data-ar="أخصائي إدخال البيانات">أخصائي
+                        إدخال البيانات</p>
+                </div>
+
+                    <!-- Salvage Yard Selection -->
+                    <div class="employee-yard-selection">
+                        <label for="active-yard" data-en="Working With:" data-ar="تعمل مع:">تعمل مع:</label>
+                        <select id="active-yard" class="form-control">
+                            <option value="1" data-en="Al-Madinah Auto Salvage" data-ar="تشليح المدينة للسيارات">تشليح
+                                المدينة للسيارات</option>
+                            <option value="2" data-en="Saudi Salvage Center" data-ar="المركز السعودي للتشليح">المركز
+                                السعودي للتشليح</option>
+                            <option value="3" data-en="Al-Madinah Parts & Services"
+                                data-ar="تشليح المدينة للقطع والخدمات">تشليح المدينة للقطع والخدمات</option>
+                        </select>
+                    </div>
+
+<nav class="employee-nav">
+    <ul>
+        <li><a href="#" class="toggle-section active" data-section="manage-parts"
+                data-en="Manage Parts" data-ar="إدارة القطع"><i class="fas fa-cogs"></i> إدارة
+                القطع</a></li>
+        <li><a href="#" data-en="Add Car to Auction" data-ar="إضافة سيارة إلى المزاد"><i class="fas fa-gavel"></i>
+                إضافة سيارة إلى المزاد</a></li>
+        <li><a href="#" data-en="View Inventory" data-ar="عرض المخزون"><i class="fas fa-boxes"></i>
+                عرض المخزون</a></li>
+        <li><a href="#" data-en="Reports" data-ar="التقارير"><i class="fas fa-chart-bar"></i>
+                التقارير</a></li>
+        <li><a href="#" data-en="Account Settings" data-ar="إعدادات الحساب"><i
+                    class="fas fa-user-cog"></i> إعدادات الحساب</a></li>
+        <li><a href="#" class="logout" data-en="Logout" data-ar="تسجيل خروج"><i
+                    class="fas fa-sign-out-alt"></i> تسجيل خروج</a></li>
+    </ul>
+</nav>
+                </div>
+
+                <!-- Main Content -->
+                <div class="employee-content">
+                    <!-- Parts Management Section -->
+                    <div class="content-section active" id="manage-parts-section">
+                        <div class="content-header">
+                            <h2 data-en="Parts Management" data-ar="إدارة القطع">إدارة القطع</h2>
+                            <p data-en="Add and manage auto parts in the inventory"
+                                data-ar="إضافة وإدارة قطع غيار السيارات في المخزون">إضافة وإدارة قطع غيار السيارات في
+                                المخزون</p>
+                        </div>
+
+                        <div class="parts-form-container">
+                            <form id="parts-management-form" class="parts-form">
+                                <div class="form-section">
+                                    <h3 data-en="Part Basic Information" data-ar="المعلومات الأساسية للقطعة">المعلومات
+                                        الأساسية للقطعة</h3>
+
+                                    <div class="form-grid">
+                                        <div class="form-group">
+                                            <label for="part-name" data-en="Part Name *" data-ar="اسم القطعة *">اسم
+                                                القطعة *</label>
+                                            <input type="text" id="part-name" name="part-name" class="form-control"
+                                                required placeholder="مثال: محرك، ناقل حركة، مصباح أمامي"
+                                                data-en-placeholder="Ex: Engine, Transmission, Headlight"
+                                                data-ar-placeholder="مثال: محرك، ناقل حركة، مصباح أمامي">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="part-number" data-en="Part Number" data-ar="رقم القطعة">رقم
+                                                القطعة</label>
+                                            <input type="text" id="part-number" name="part-number" class="form-control"
+                                                placeholder="الرقم التسلسلي للقطعة (اختياري)"
+                                                data-en-placeholder="Part serial number (optional)"
+                                                data-ar-placeholder="الرقم التسلسلي للقطعة (اختياري)">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="part-category" data-en="Category *" data-ar="الفئة *">الفئة
+                                                *</label>
+                                            <select id="part-category" name="part-category" class="form-control"
+                                                required>
+                                                <option value="" data-en="Select Category" data-ar="اختر الفئة">اختر
+                                                    الفئة</option>
+                                                <option value="engine" data-en="Engine" data-ar="المحرك">المحرك</option>
+                                                <option value="transmission" data-en="Transmission"
+                                                    data-ar="ناقل الحركة">ناقل الحركة</option>
+                                                <option value="electrical" data-en="Electrical" data-ar="كهربائية">
+                                                    كهربائية</option>
+                                                <option value="body" data-en="Body Parts" data-ar="قطع الهيكل">قطع
+                                                    الهيكل</option>
+                                                <option value="suspension" data-en="Suspension" data-ar="التعليق">
+                                                    التعليق</option>
+                                                <option value="brakes" data-en="Brakes" data-ar="الفرامل">الفرامل
+                                                </option>
+                                                <option value="cooling" data-en="Cooling System" data-ar="نظام التبريد">
+                                                    نظام التبريد</option>
+                                                <option value="interior" data-en="Interior" data-ar="داخلية">داخلية
+                                                </option>
+                                                <option value="other" data-en="Other" data-ar="أخرى">أخرى</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="part-price" data-en="Price (SAR) *"
+                                                data-ar="السعر (ريال) *">السعر (ريال) *</label>
+                                            <input type="number" id="part-price" name="part-price" class="form-control"
+                                                required min="1" placeholder="أدخل السعر بالريال السعودي"
+                                                data-en-placeholder="Enter price in SAR"
+                                                data-ar-placeholder="أدخل السعر بالريال السعودي">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-section">
+                                    <h3 data-en="Vehicle Compatibility" data-ar="توافق السيارة">توافق السيارة</h3>
+
+                                    <div class="form-grid">
+                                        <div class="form-group">
+                                            <label for="vehicle-manufacturer" data-en="Manufacturer *"
+                                                data-ar="الشركة المصنعة *">الشركة المصنعة *</label>
+                                            <select name="vehicle-manufacturer" id="vehicle-manufacturer"
+                                                class="form-control" required>
+                                                <option value="" data-en="Select Manufacturer"
+                                                    data-ar="اختر الشركة المصنعة">اختر الشركة المصنعة</option>
+                                                <option value="toyota" data-en="Toyota" data-ar="تويوتا">تويوتا</option>
+                                                <option value="honda" data-en="Honda" data-ar="هوندا">هوندا</option>
+                                                <option value="ford" data-en="Ford" data-ar="فورد">فورد</option>
+                                                <option value="bmw" data-en="BMW" data-ar="بي إم دبليو">بي إم دبليو
+                                                </option>
+                                                <option value="mercedes" data-en="Mercedes" data-ar="مرسيدس">مرسيدس
+                                                </option>
+                                                <option value="nissan" data-en="Nissan" data-ar="نيسان">نيسان</option>
+                                                <option value="hyundai" data-en="Hyundai" data-ar="هيونداي">هيونداي
+                                                </option>
+                                                <option value="kia" data-en="Kia" data-ar="كيا">كيا</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="vehicle-model" data-en="Model *" data-ar="الموديل *">الموديل
+                                                *</label>
+                                            <select name="vehicle-model" id="vehicle-model" class="form-control"
+                                                required>
+                                                <option value="" data-en="Select Model" data-ar="اختر الموديل">اختر
+                                                    الموديل</option>
+                                                <!-- Options will be populated via JavaScript based on manufacturer selection -->
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="vehicle-year-from" data-en="Year From *"
+                                                data-ar="السنة من *">السنة من *</label>
+                                            <select name="vehicle-year-from" id="vehicle-year-from" class="form-control"
+                                                required>
+                                                <option value="" data-en="Select Year" data-ar="اختر السنة">اختر السنة
+                                                </option>
+                                                <option value="2025" data-en="2025" data-ar="2025">2025</option>
+                                                <option value="2024" data-en="2024" data-ar="2024">2024</option>
+                                                <option value="2023" data-en="2023" data-ar="2023">2023</option>
+                                                <option value="2022" data-en="2022" data-ar="2022">2022</option>
+                                                <option value="2021" data-en="2021" data-ar="2021">2021</option>
+                                                <option value="2020" data-en="2020" data-ar="2020">2020</option>
+                                                <option value="2019" data-en="2019" data-ar="2019">2019</option>
+                                                <option value="2018" data-en="2018" data-ar="2018">2018</option>
+                                                <option value="2017" data-en="2017" data-ar="2017">2017</option>
+                                                <option value="2016" data-en="2016" data-ar="2016">2016</option>
+                                                <option value="2015" data-en="2015" data-ar="2015">2015</option>
+                                                <option value="2014" data-en="2014" data-ar="2014">2014</option>
+                                                <option value="2013" data-en="2013" data-ar="2013">2013</option>
+                                                <option value="2012" data-en="2012" data-ar="2012">2012</option>
+                                                <option value="2011" data-en="2011" data-ar="2011">2011</option>
+                                                <option value="2010" data-en="2010" data-ar="2010">2010</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="vehicle-year-to" data-en="Year To *" data-ar="السنة إلى *">السنة
+                                                إلى *</label>
+                                            <select name="vehicle-year-to" id="vehicle-year-to" class="form-control"
+                                                required>
+                                                <option value="" data-en="Select Year" data-ar="اختر السنة">اختر السنة
+                                                </option>
+                                                <option value="2025" data-en="2025" data-ar="2025">2025</option>
+                                                <option value="2024" data-en="2024" data-ar="2024">2024</option>
+                                                <option value="2023" data-en="2023" data-ar="2023">2023</option>
+                                                <option value="2022" data-en="2022" data-ar="2022">2022</option>
+                                                <option value="2021" data-en="2021" data-ar="2021">2021</option>
+                                                <option value="2020" data-en="2020" data-ar="2020">2020</option>
+                                                <option value="2019" data-en="2019" data-ar="2019">2019</option>
+                                                <option value="2018" data-en="2018" data-ar="2018">2018</option>
+                                                <option value="2017" data-en="2017" data-ar="2017">2017</option>
+                                                <option value="2016" data-en="2016" data-ar="2016">2016</option>
+                                                <option value="2015" data-en="2015" data-ar="2015">2015</option>
+                                                <option value="2014" data-en="2014" data-ar="2014">2014</option>
+                                                <option value="2013" data-en="2013" data-ar="2013">2013</option>
+                                                <option value="2012" data-en="2012" data-ar="2012">2012</option>
+                                                <option value="2011" data-en="2011" data-ar="2011">2011</option>
+                                                <option value="2010" data-en="2010" data-ar="2010">2010</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group full-width">
+                                        <div class="compatibility-note">
+                                            <p data-en="Add additional compatibility information or specific variations"
+                                                data-ar="أضف معلومات توافق إضافية أو تنويعات محددة">أضف معلومات توافق
+                                                إضافية أو تنويعات محددة</p>
+                                            <textarea name="compatibility-notes" id="compatibility-notes"
+                                                class="form-control" rows="2"
+                                                placeholder="مثال: متوافق مع الإصدارات SE و LE فقط، متوافق مع الموديلات ذات المحركات 2.5 لتر فقط"
+                                                data-en-placeholder="Ex: Compatible with SE and LE trims only, Compatible with 2.5L engine models only"
+                                                data-ar-placeholder="مثال: متوافق مع الإصدارات SE و LE فقط، متوافق مع الموديلات ذات المحركات 2.5 لتر فقط"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-section">
+                                    <h3 data-en="Part Condition & Details" data-ar="حالة وتفاصيل القطعة">حالة وتفاصيل
+                                        القطعة</h3>
+
+                                    <div class="form-grid">
+                                        <div class="form-group">
+                                            <label for="part-condition" data-en="Condition *" data-ar="الحالة *">الحالة
+                                                *</label>
+                                            <select name="part-condition" id="part-condition" class="form-control"
+                                                required>
+                                                <option value="" data-en="Select Condition" data-ar="اختر الحالة">اختر
+                                                    الحالة</option>
+                                                <option value="excellent" data-en="Excellent" data-ar="ممتازة">ممتازة
+                                                </option>
+                                                <option value="good" data-en="Good" data-ar="جيدة">جيدة</option>
+                                                <option value="average" data-en="Average" data-ar="متوسطة">متوسطة
+                                                </option>
+                                                <option value="needs-repair" data-en="Needs Repair"
+                                                    data-ar="تحتاج إصلاح">تحتاج إصلاح</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="part-status" data-en="Status *" data-ar="الوضع *">الوضع
+                                                *</label>
+                                            <select name="part-status" id="part-status" class="form-control" required>
+                                                <option value="available" data-en="Available" data-ar="متوفر">متوفر
+                                                </option>
+                                                <option value="reserved" data-en="Reserved" data-ar="محجوز">محجوز
+                                                </option>
+                                                <option value="sold" data-en="Sold" data-ar="مباع">مباع</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="warranty" data-en="Warranty (days)"
+                                                data-ar="الضمان (أيام)">الضمان (أيام)</label>
+                                            <input type="number" id="warranty" name="warranty" class="form-control"
+                                                min="0" value="30" placeholder="عدد أيام الضمان"
+                                                data-en-placeholder="Number of warranty days"
+                                                data-ar-placeholder="عدد أيام الضمان">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="location" data-en="Storage Location" data-ar="موقع التخزين">موقع
+                                                التخزين</label>
+                                            <input type="text" id="location" name="location" class="form-control"
+                                                placeholder="رقم الرف أو القسم في المستودع"
+                                                data-en-placeholder="Shelf or section number in warehouse"
+                                                data-ar-placeholder="رقم الرف أو القسم في المستودع">
+                                        </div>
+                                    </div>
+                                    <div class="form-group full-width">
+                                        <label for="part-description" data-en="Description *" data-ar="الوصف *">الوصف
+                                            *</label>
+                                        <textarea name="part-description" id="part-description" class="form-control"
+                                            rows="3" required
+                                            placeholder="وصف تفصيلي للقطعة، حالتها، وأي معلومات هامة أخرى"
+                                            data-en-placeholder="Detailed description of the part, its condition, and any other important information"
+                                            data-ar-placeholder="وصف تفصيلي للقطعة، حالتها، وأي معلومات هامة أخرى"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form-section">
+                                    <h3 data-en="Part Images" data-ar="صور القطعة">صور القطعة</h3>
+
+                                    <div class="form-group upload-area">
+                                        <label class="upload-label" data-en="Upload Part Images (Max 5) *"
+                                            data-ar="رفع صور القطعة (بحد أقصى 5) *">رفع صور القطعة (بحد أقصى 5)
+                                            *</label>
+                                        <div class="upload-container">
+                                            <div class="upload-dropzone">
+                                                <i class="fas fa-cloud-upload-alt"></i>
+                                                <p data-en="Drag and drop images here or click to browse"
+                                                    data-ar="اسحب وأفلت الصور هنا أو انقر للتصفح">اسحب وأفلت الصور هنا
+                                                    أو انقر للتصفح</p>
+                                                <input type="file" id="part-images" name="part-images" multiple
+                                                    accept="image/*" class="file-input" required>
+                                            </div>
+                                            <div class="upload-preview"></div>
+                                        </div>
+                                        <p class="upload-note"
+                                            data-en="*Supported formats: JPG, PNG, WEBP. Max file size: 5MB each."
+                                            data-ar="*الصيغ المدعومة: JPG، PNG، WEBP. الحجم الأقصى للملف: 5 ميجابايت لكل صورة.">
+                                            *الصيغ المدعومة: JPG، PNG، WEBP. الحجم الأقصى للملف: 5 ميجابايت لكل صورة.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="form-actions">
+                                    <button type="reset" class="btn btn-outline" data-en="Cancel"
+                                        data-ar="إلغاء">إلغاء</button>
+                                    <button type="submit" class="btn btn-primary" data-en="Add Part"
+                                        data-ar="إضافة القطعة">إضافة القطعة</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Recently Added Parts Section -->
+                        <div class="recent-parts">
+                            <div class="content-header">
+                                <h2 data-en="Recently Added Parts" data-ar="القطع المضافة حديثاً">القطع المضافة حديثاً
+                                </h2>
+                            </div>
+
+                            <div class="parts-table-container">
+                                <table class="parts-table">
+                                    <thead>
+                                        <tr>
+                                            <th data-en="Date Added" data-ar="تاريخ الإضافة">تاريخ الإضافة</th>
+                                            <th data-en="Part Name" data-ar="اسم القطعة">اسم القطعة</th>
+                                            <th data-en="Vehicle" data-ar="السيارة">السيارة</th>
+                                            <th data-en="Price" data-ar="السعر">السعر</th>
+                                            <th data-en="Condition" data-ar="الحالة">الحالة</th>
+                                            <th data-en="Actions" data-ar="الإجراءات">الإجراءات</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>03/05/2025</td>
+                                            <td>محرك كامل</td>
+                                            <td>تويوتا كامري 2018-2020</td>
+                                            <td>4,566 ريال</td>
+                                            <td>
+                                                <span class="status excellent">
+                                                    <i class="fas fa-circle"></i>
+                                                    <span data-en="Excellent" data-ar="ممتازة">ممتازة</span>
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <div class="action-buttons">
+                                                    <button class="action-btn view-btn" title="عرض التفاصيل"><i
+                                                            class="fas fa-eye"></i></button>
+                                                    <button class="action-btn edit-btn" title="تعديل"><i
+                                                            class="fas fa-edit"></i></button>
+                                                    <button class="action-btn delete-btn" title="حذف"><i
+                                                            class="fas fa-trash"></i></button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>02/05/2025</td>
+                                            <td>ناقل حركة أوتوماتيكي</td>
+                                            <td>هوندا أكورد 2017-2019</td>
+                                            <td>3,723 ريال</td>
+                                            <td>
+                                                <span class="status good">
+                                                    <i class="fas fa-circle"></i>
+                                                    <span data-en="Good" data-ar="جيدة">جيدة</span>
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <div class="action-buttons">
+                                                    <button class="action-btn view-btn" title="عرض التفاصيل"><i
+                                                            class="fas fa-eye"></i></button>
+                                                    <button class="action-btn edit-btn" title="تعديل"><i
+                                                            class="fas fa-edit"></i></button>
+                                                    <button class="action-btn delete-btn" title="حذف"><i
+                                                            class="fas fa-trash"></i></button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>30/04/2025</td>
+                                            <td>شمعة أمامي يسار</td>
+                                            <td>نيسان التيما 2019-2021</td>
+                                            <td>460 ريال</td>
+                                            <td>
+                                                <span class="status average">
+                                                    <i class="fas fa-circle"></i>
+                                                    <span data-en="Average" data-ar="متوسطة">متوسطة</span>
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <div class="action-buttons">
+                                                    <button class="action-btn view-btn" title="عرض التفاصيل"><i
+                                                            class="fas fa-eye"></i></button>
+                                                    <button class="action-btn edit-btn" title="تعديل"><i
+                                                            class="fas fa-edit"></i></button>
+                                                    <button class="action-btn delete-btn" title="حذف"><i
+                                                            class="fas fa-trash"></i></button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>28/04/2025</td>
+                                            <td>باب أمامي يسار</td>
+                                            <td>فورد إكسبلورر 2020-2022</td>
+                                            <td>1,200 ريال</td>
+                                            <td>
+                                                <span class="status needs-repair">
+                                                    <i class="fas fa-circle"></i>
+                                                    <span data-en="Needs Repair" data-ar="تحتاج إصلاح">تحتاج
+                                                        إصلاح</span>
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <div class="action-buttons">
+                                                    <button class="action-btn view-btn" title="عرض التفاصيل"><i
+                                                            class="fas fa-eye"></i></button>
+                                                    <button class="action-btn edit-btn" title="تعديل"><i
+                                                            class="fas fa-edit"></i></button>
+                                                    <button class="action-btn delete-btn" title="حذف"><i
+                                                            class="fas fa-trash"></i></button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="view-more">
+                                <a href="#" class="btn btn-outline" data-en="View All Parts"
+                                    data-ar="عرض جميع القطع">عرض جميع القطع</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vehicle Registration Section Removed -->
+
+                </div>
+
+                <!-- Recently Added Vehicles Section -->
+                <div class="recent-vehicles">
+                    <div class="content-header">
+                        <h2 data-en="Recently Added Vehicles" data-ar="السيارات المضافة حديثاً">السيارات المضافة
+                             حديثاً للمزاد</h2>
+                    </div>
+
+                    <div class="vehicles-table-container">
+                        <table class="vehicles-table">
+                            <thead>
+                                <tr>
+                                    <th data-en="Date Added" data-ar="تاريخ الإضافة">تاريخ الإضافة</th>
+                                    <th data-en="Vehicle" data-ar="السيارة">السيارة</th>
+                                    <th data-en="Chassis Number" data-ar="رقم الهيكل">رقم الهيكل</th>
+                                    <th data-en="Condition" data-ar="الحالة">الحالة</th>
+                                    <th data-en="Actions" data-ar="الإجراءات">الإجراءات</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>03/05/2025</td>
+                                    <td>تويوتا كامري 2023</td>
+                                    <td>5TD14BB7JU15****</td>
+                                    <td>
+                                        <span class="status excellent">
+                                            <i class="fas fa-circle"></i>
+                                            <span data-en="Excellent" data-ar="ممتازة">ممتازة</span>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="action-btn view-btn" title="عرض التفاصيل"><i
+                                                    class="fas fa-eye"></i></button>
+                                            <button class="action-btn edit-btn" title="تعديل"><i
+                                                    class="fas fa-edit"></i></button>
+                                            <button class="action-btn parts-btn" title="إدارة القطع"><i
+                                                    class="fas fa-cogs"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>02/05/2025</td>
+                                    <td>هوندا أكورد 2021</td>
+                                    <td>1HGCV2F34MA0****</td>
+                                    <td>
+                                        <span class="status good">
+                                            <i class="fas fa-circle"></i>
+                                            <span data-en="Good" data-ar="جيدة">جيدة</span>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="action-btn view-btn" title="عرض التفاصيل"><i
+                                                    class="fas fa-eye"></i></button>
+                                            <button class="action-btn edit-btn" title="تعديل"><i
+                                                    class="fas fa-edit"></i></button>
+                                            <button class="action-btn parts-btn" title="إدارة القطع"><i
+                                                    class="fas fa-cogs"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>30/04/2025</td>
+                                    <td>نيسان التيما 2020</td>
+                                    <td>1N4BL4BV2LC2****</td>
+                                    <td>
+                                        <span class="status average">
+                                            <i class="fas fa-circle"></i>
+                                            <span data-en="Average" data-ar="متوسطة">متوسطة</span>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="action-btn view-btn" title="عرض التفاصيل"><i
+                                                    class="fas fa-eye"></i></button>
+                                            <button class="action-btn edit-btn" title="تعديل"><i
+                                                    class="fas fa-edit"></i></button>
+                                            <button class="action-btn parts-btn" title="إدارة القطع"><i
+                                                    class="fas fa-cogs"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="view-more">
+                        <a href="#" class="btn btn-outline" data-en="View All Vehicles" data-ar="عرض جميع السيارات">عرض
+                            جميع السيارات</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Error Notification -->
+    <div class="notification error">
+        <div class="notification-content">
+            <i class="fas fa-exclamation-circle"></i>
+            <p data-en="This feature is not available in the prototype"
+                data-ar="هذه الميزة غير متوفرة في النموذج الأولي">هذه الميزة غير متوفرة في النموذج الأولي</p>
+        </div>
+        <button class="notification-close">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <img src="images/logo-white.png" alt="تشليح بلس" class="footer-logo">
+                    <div class="logo-text-footer">تشليح بلس</div>
+                    <p data-en="Connecting customers with quality used auto parts across the region."
+                        data-ar="ربط العملاء بقطع غيار السيارات المستعملة عالية الجودة في جميع أنحاء المنطقة.">
+                        ربط العملاء بقطع غيار السيارات المستعملة عالية الجودة في جميع أنحاء المنطقة.
+                    </p>
+                </div>
+                <div class="footer-links">
+                    <h3 data-en="Quick Links" data-ar="روابط سريعة">روابط سريعة</h3>
+                    <ul>
+                        <li><a href="index.html" data-en="Home" data-ar="الرئيسية">الرئيسية</a></li>
+                        <li><a href="search-results.html" data-en="Search Parts" data-ar="البحث عن قطع">البحث عن قطع</a>
+                        </li>
+                        <li><a href="auctions.html" data-en="Car Auctions" data-ar="مزادات السيارات">مزادات السيارات</a>
+                        </li>
+                        <li><a href="salvage-yards.html" data-en="Salvage Yards" data-ar="التشاليح">التشاليح</a></li>
+                        <li><a href="register.html" data-en="Register" data-ar="التسجيل">التسجيل</a></li>
+                        <li><a href="login.html" data-en="Login" data-ar="تسجيل الدخول">تسجيل الدخول</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3 data-en="Contact Us" data-ar="اتصل بنا">اتصل بنا</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> المدينة المنورة, المملكة العربية السعودية</p>
+                    <p><i class="fas fa-phone"></i> +966 123 456 789</p>
+                    <p><i class="fas fa-envelope"></i> info@tashleeh-plus.sa</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-support">
+                    <h3 data-en="Support" data-ar="الدعم">الدعم</h3>
+                    <ul>
+                        <li><a href="faq.html" data-en="FAQ" data-ar="الأسئلة الشائعة">الأسئلة الشائعة</a></li>
+                        <li><a href="contact.html" data-en="Contact Support" data-ar="الاتصال بالدعم">الاتصال بالدعم</a>
+                        </li>
+                        <li><a href="privacy.html" data-en="Privacy Policy" data-ar="سياسة الخصوصية">سياسة الخصوصية</a>
+                        </li>
+                        <li><a href="terms.html" data-en="Terms of Service" data-ar="شروط الخدمة">شروط الخدمة</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 تشليح بلس. <span data-en="All Rights Reserved" data-ar="جميع الحقوق محفوظة">جميع الحقوق
+                        محفوظة</span>.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/language.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/employee.js"></script>
+    <script src="js/mobile-menu-fix.js"></script>
+    
+</body>
+</html>

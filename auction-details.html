@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفاصيل المزاد - تشليح بلس</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/auction-details.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Font for Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header id="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="تشليح بلس - سوق قطع غيار السيارات المستعملة">
+                    <span class="logo-text">تشليح بلس</span>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" data-en="Home" data-ar="الرئيسية">الرئيسية</a></li>
+                    <li><a href="search-results.html" data-en="Search Parts" data-ar="بحث قطع">بحث قطع</a></li>
+                    <li><a href="auctions.html" class="active" data-en="Car Auctions" data-ar="مزادات السيارات">مزادات
+                            السيارات</a></li>
+                    <li><a href="employee.html" data-en="Employee Portal" data-ar="بوابة الموظفين">بوابة الموظفين</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <div class="language-switcher">
+                    <button id="lang-toggle" data-current="ar">
+                        <span data-en="العربية" data-ar="English">English</span>
+                    </button>
+                </div>
+                <div class="auth-buttons">
+                    <a href="login.html" class="btn btn-outline" data-en="Login" data-ar="تسجيل الدخول">تسجيل الدخول</a>
+                    <a href="register.html" class="btn btn-primary" data-en="Register" data-ar="التسجيل">التسجيل</a>
+                </div>
+                <div class="user-profile hidden">
+                    <a href="profile.html">
+                        <img src="images/user-placeholder.png" alt="الملف الشخصي للمستخدم">
+                    </a>
+                </div>
+            </div>
+            <button class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Breadcrumb Section -->
+    <section class="breadcrumb-section">
+        <div class="container">
+            <ul class="breadcrumb">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="auctions.html">مزادات السيارات</a></li>
+                <li>تفاصيل المزاد</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Auction Details Section -->
+    <section class="auction-details">
+        <div class="container">
+            <div class="auction-alert">
+                <i class="fas fa-info-circle"></i>
+                <span data-en="This auction is only available for registered salvage yard owners."
+                    data-ar="هذا المزاد متاح فقط لمالكي التشاليح المسجلين.">
+                    هذا المزاد متاح فقط لمالكي التشاليح المسجلين.
+                </span>
+            </div>
+
+            <div class="auction-header">
+                <h1 class="auction-title">تويوتا كامري 2018</h1>
+                <div class="auction-status">
+                    <div class="status-tag active">
+                        <i class="fas fa-gavel"></i>
+                        <span data-en="Active Auction" data-ar="مزاد نشط">مزاد نشط</span>
+                    </div>
+                    <!-- نقلنا المؤقت إلى هنا لإصلاح شكل الصفحة -->
+                    <div class="auction-timer" id="auction-timer">
+                        <i class="fas fa-clock"></i>
+                        <span id="countdown">22:45:10</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="auction-grid">
+                <!-- Left Column - Images and Bidding -->
+                <div class="auction-left">
+                    <div class="auction-slideshow">
+                        <div class="main-image">
+                            <img src="images/auction-car-1.jpg" alt="تويوتا كامري 2018" id="auction-main-image">
+                            <button class="prev-btn"><i class="fas fa-chevron-right"></i></button>
+                            <button class="next-btn"><i class="fas fa-chevron-left"></i></button>
+                        </div>
+                        <div class="image-thumbnails">
+                            <div class="thumbnail active" data-src="images/auction-car-1.jpg">
+                                <img src="images/auction-car-1.jpg" alt="تويوتا كامري 2018 - صورة 1">
+                            </div>
+                            <!-- إعادة أسماء الصور كما كانت في الملف الأصلي -->
+                            <div class="thumbnail" data-src="images/auction-car-4.jpg">
+                                <img src="images/auction-car-4.jpg" alt="تويوتا كامري 2018 - صورة 2">
+                            </div>
+                            <div class="thumbnail" data-src="images/auction-car-5.jpg">
+                                <img src="images/auction-car-5.jpg" alt="تويوتا كامري 2018 - صورة 3">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bid-section">
+                        <div class="current-bid">
+                            <h3 data-en="Current Bid" data-ar="العرض الحالي">العرض الحالي</h3>
+                            <div class="bid-amount">38,550 ريال</div>
+                            <div class="bid-info">
+                                <div class="bids-count">
+                                    <i class="fas fa-gavel"></i>
+                                    <span>8 عروض</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bid-actions">
+                            <div class="min-increment">
+                                <span data-en="Minimum Increment" data-ar="الحد الأدنى للزيادة">الحد الأدنى
+                                    للزيادة:</span>
+                                <span class="increment-amount">500 ريال</span>
+                            </div>
+                            <form id="bid-form">
+                                <div class="bid-input-group">
+                                    <input type="number" id="bid-amount" min="39050" step="500" value="39050" required>
+                                    <span class="currency">ريال</span>
+                                </div>
+                                <button type="submit" class="btn btn-primary bid-now-btn">
+                                    <i class="fas fa-gavel"></i>
+                                    <span data-en="Place Bid" data-ar="قدم عرض">قدم عرض</span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="bid-history">
+                        <h3 data-en="Bid History" data-ar="سجل المزايدات">سجل المزايدات</h3>
+                        <div class="bids-list">
+                            <div class="bid-item">
+                                <div class="bid-item-user">
+                                    <img src="images/user-placeholder.png" alt="المستخدم">
+                                    <span>تشليح الرياض للسيارات</span>
+                                </div>
+                                <div class="bid-item-amount">38,550 ريال</div>
+                                <div class="bid-item-time">منذ 2 ساعة</div>
+                            </div>
+                            <div class="bid-item">
+                                <div class="bid-item-user">
+                                    <img src="images/user-placeholder.png" alt="المستخدم">
+                                    <span>مركز قطع غيار جدة</span>
+                                </div>
+                                <div class="bid-item-amount">38,000 ريال</div>
+                                <div class="bid-item-time">منذ 3 ساعات</div>
+                            </div>
+                            <div class="bid-item">
+                                <div class="bid-item-user">
+                                    <img src="images/user-placeholder.png" alt="المستخدم">
+                                    <span>تشليح المدينة للسيارات</span>
+                                </div>
+                                <div class="bid-item-amount">37,500 ريال</div>
+                                <div class="bid-item-time">منذ 5 ساعات</div>
+                            </div>
+                            <div class="bid-item">
+                                <div class="bid-item-user">
+                                    <img src="images/user-placeholder.png" alt="المستخدم">
+                                    <span>تشليح الرياض للسيارات</span>
+                                </div>
+                                <div class="bid-item-amount">37,000 ريال</div>
+                                <div class="bid-item-time">منذ 7 ساعات</div>
+                            </div>
+                            <div class="bid-item">
+                                <div class="bid-item-user">
+                                    <img src="images/user-placeholder.png" alt="المستخدم">
+                                    <span>مركز الخليج للقطع</span>
+                                </div>
+                                <div class="bid-item-amount">36,500 ريال</div>
+                                <div class="bid-item-time">منذ 9 ساعات</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column - Vehicle Details -->
+                <div class="auction-right">
+                    <div class="car-info">
+                        <h2 data-en="Vehicle Information" data-ar="معلومات السيارة">معلومات السيارة</h2>
+                        <div class="car-details">
+                            <div class="car-detail-row">
+                                <div class="car-detail">
+                                    <span class="detail-label" data-en="Make" data-ar="الشركة المصنعة">الشركة
+                                        المصنعة</span>
+                                    <span class="detail-value">تويوتا</span>
+                                </div>
+                                <div class="car-detail">
+                                    <span class="detail-label" data-en="Model" data-ar="الموديل">الموديل</span>
+                                    <span class="detail-value">كامري</span>
+                                </div>
+                            </div>
+                            <div class="car-detail-row">
+                                <div class="car-detail">
+                                    <span class="detail-label" data-en="Year" data-ar="سنة الصنع">سنة الصنع</span>
+                                    <span class="detail-value">2018</span>
+                                </div>
+                                <div class="car-detail">
+                                    <span class="detail-label" data-en="Trim" data-ar="الفئة">الفئة</span>
+                                    <span class="detail-value">GLE</span>
+                                </div>
+                            </div>
+                            <div class="car-detail-row">
+                                <div class="car-detail">
+                                    <span class="detail-label" data-en="Mileage" data-ar="المسافة المقطوعة">المسافة
+                                        المقطوعة</span>
+                                    <span class="detail-value">125,000 كم</span>
+                                </div>
+                                <div class="car-detail">
+                                    <span class="detail-label" data-en="Engine" data-ar="المحرك">المحرك</span>
+                                    <span class="detail-value">2.5L 4-cylinder</span>
+                                </div>
+                            </div>
+                            <div class="car-detail-row">
+                                <div class="car-detail">
+                                    <span class="detail-label" data-en="Transmission" data-ar="ناقل الحركة">ناقل
+                                        الحركة</span>
+                                    <span class="detail-value">أوتوماتيكي</span>
+                                </div>
+                                <div class="car-detail">
+                                    <span class="detail-label" data-en="Exterior Color" data-ar="اللون الخارجي">اللون
+                                        الخارجي</span>
+                                    <span class="detail-value">أبيض لؤلؤي</span>
+                                </div>
+                            </div>
+                            <div class="car-detail-row">
+                                <div class="car-detail">
+                                    <span class="detail-label" data-en="Interior Color" data-ar="اللون الداخلي">اللون
+                                        الداخلي</span>
+                                    <span class="detail-value">بيج</span>
+                                </div>
+                                <div class="car-detail">
+                                    <span class="detail-label" data-en="VIN" data-ar="رقم الهيكل">رقم الهيكل</span>
+                                    <span class="detail-value">4T1BF1FK7JU123456</span>
+                                </div>
+                            </div>
+                            <div class="car-detail-row">
+                                <div class="car-detail full-width">
+                                    <span class="detail-label" data-en="Damage Type" data-ar="نوع الضرر">نوع
+                                        الضرر</span>
+                                    <span class="detail-value">تصادم أمامي جانبي</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="car-description">
+                        <h2 data-en="Description" data-ar="الوصف">الوصف</h2>
+                        <div class="description-content">
+                            <p>سيارة تويوتا كامري موديل 2018 تعرضت لحادث تصادم أمامي من الجهة اليمنى. المحرك وناقل
+                                الحركة في حالة ممتازة.</p>
+                            <p>معظم التلف في الجهة الأمامية اليمنى من السيارة، الضربه وصلت الى الشاسية لذلك السيارة تالف
+                                حسب قوانين المرور السعودي.</p>
+                            <p>نظام التبريد والتكييف يعمل بشكل جيد، وكذلك النظام الكهربائي. الأجزاء الداخلية بحالة
+                                ممتازة دون أي ضرر.</p>
+                            <p>السيارة مناسبة للاستفادة من قطع الغيار.</p>
+                        </div>
+                    </div>
+
+                    <div class="car-condition">
+                        <h2 data-en="Parts Condition" data-ar="حالة القطع">حالة القطع</h2>
+                        <div class="condition-grid">
+                            <div class="condition-item excellent">
+                                <div class="condition-header">
+                                    <span class="part-name">المحرك</span>
+                                    <span class="condition-rating">ممتازة</span>
+                                </div>
+                                <div class="condition-bar">
+                                    <div class="condition-progress" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div class="condition-item excellent">
+                                <div class="condition-header">
+                                    <span class="part-name">ناقل الحركة</span>
+                                    <span class="condition-rating">ممتازة</span>
+                                </div>
+                                <div class="condition-bar">
+                                    <div class="condition-progress" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="condition-item good">
+                                <div class="condition-header">
+                                    <span class="part-name">نظام التعليق</span>
+                                    <span class="condition-rating">جيدة</span>
+                                </div>
+                                <div class="condition-bar">
+                                    <div class="condition-progress" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div class="condition-item good">
+                                <div class="condition-header">
+                                    <span class="part-name">نظام الفرامل</span>
+                                    <span class="condition-rating">جيدة</span>
+                                </div>
+                                <div class="condition-bar">
+                                    <div class="condition-progress" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            <div class="condition-item damaged">
+                                <div class="condition-header">
+                                    <span class="part-name">الهيكل الأمامي</span>
+                                    <span class="condition-rating">متضرر</span>
+                                </div>
+                                <div class="condition-bar">
+                                    <div class="condition-progress" style="width: 30%"></div>
+                                </div>
+                            </div>
+                            <div class="condition-item average">
+                                <div class="condition-header">
+                                    <span class="part-name">الأجزاء الكهربائية</span>
+                                    <span class="condition-rating">متوسطة</span>
+                                </div>
+                                <div class="condition-bar">
+                                    <div class="condition-progress" style="width: 65%"></div>
+                                </div>
+                            </div>
+                            <div class="condition-item excellent">
+                                <div class="condition-header">
+                                    <span class="part-name">التجهيزات الداخلية</span>
+                                    <span class="condition-rating">ممتازة</span>
+                                </div>
+                                <div class="condition-bar">
+                                    <div class="condition-progress" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="condition-item good">
+                                <div class="condition-header">
+                                    <span class="part-name">الإطارات</span>
+                                    <span class="condition-rating">جيدة</span>
+                                </div>
+                                <div class="condition-bar">
+                                    <div class="condition-progress" style="width: 70%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="auction-terms">
+                        <h2 data-en="Auction Terms" data-ar="شروط المزاد">شروط المزاد</h2>
+                        <div class="terms-content">
+                            <ul>
+                                <li>المزاد متاح فقط لمالكي التشاليح المسجلين في النظام.</li>
+                                <li>الحد الأدنى للزيادة في المزايدة هو 500 ريال.</li>
+                                <li>يجب دفع 10% من قيمة السيارة في حال رسو المزاد خلال 24 ساعة كعربون.</li>
+                                <li>يجب دفع المبلغ المتبقي خلال 7 أيام من تاريخ رسو المزاد.</li>
+                                <li>يتحمل الفائز بالمزاد مسؤولية نقل السيارة من موقعها الحالي.</li>
+                                <li>السيارة تباع كما هي وبدون ضمان للأجزاء أو حالتها.</li>
+                                <li>لا يمكن إلغاء عملية الشراء بعد رسو المزاد.</li>
+                                <!-- إضافة الشروط الجديدة -->
+                                <li>يحق لمالك السيارة رفض البيع إذا لم يناسبه السعر النهائي للمزاد.</li>
+                                <li>توجد رسوم على عملية المزاد تؤخذ من صاحب التشليح وهي 2.5% من قيمة المزاد النهائية.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="auction-location">
+                        <h2 data-en="Vehicle Location" data-ar="موقع السيارة">موقع السيارة</h2>
+                        <div class="location-info">
+                            <div class="location-text">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>الرياض، المملكة العربية السعودية</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Auctions Section -->
+    <section class="related-auctions">
+        <div class="container">
+            <h2 class="section-title" data-en="Other Active Auctions" data-ar="مزادات أخرى نشطة">مزادات أخرى نشطة</h2>
+            <div class="auctions-grid">
+                <div class="auction-card">
+                    <div class="auction-img">
+                        <img src="images/auction-car-2.jpg" alt="هوندا أكورد 2017">
+                        <div class="time-remaining">
+                            <i class="fas fa-clock"></i>
+                            <span>46:30:22</span>
+                        </div>
+                    </div>
+                    <div class="auction-details">
+                        <h3>هوندا أكورد 2017</h3>
+                        <p class="auction-info">
+                            <span data-en="Current Bid:" data-ar="العرض الحالي:">العرض الحالي:</span>
+                            <span class="bid-amount">41,200 ريال</span>
+                        </p>
+                        <p class="bids-count">
+                            <i class="fas fa-gavel"></i>
+                            <span data-en="5 bids" data-ar="5 عروض">5 عروض</span>
+                        </p>
+                    </div>
+                    <a href="auction-details.html?id=2" class="btn btn-primary" data-en="View Auction"
+                        data-ar="عرض المزاد">عرض المزاد</a>
+                </div>
+                <div class="auction-card">
+                    <div class="auction-img">
+                        <img src="images/auction-car-3.jpg" alt="نيسان التيما 2019">
+                        <div class="time-remaining">
+                            <i class="fas fa-clock"></i>
+                            <span>12:15:40</span>
+                        </div>
+                    </div>
+                    <div class="auction-details">
+                        <h3>نيسان التيما 2019</h3>
+                        <p class="auction-info">
+                            <span data-en="Current Bid:" data-ar="العرض الحالي:">العرض الحالي:</span>
+                            <span class="bid-amount">35,800 ريال</span>
+                        </p>
+                        <p class="bids-count">
+                            <i class="fas fa-gavel"></i>
+                            <span data-en="12 bids" data-ar="12 عروض">12 عروض</span>
+                        </p>
+                    </div>
+                    <a href="auction-details.html?id=3" class="btn btn-primary" data-en="View Auction"
+                        data-ar="عرض المزاد">عرض المزاد</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <img src="images/logo-white.png" alt="تشليح بلس" class="footer-logo">
+                    <div class="logo-text-footer">تشليح بلس</div>
+                    <p data-en="Connecting customers with quality used auto parts across the region."
+                        data-ar="ربط العملاء بقطع غيار السيارات المستعملة عالية الجودة في جميع أنحاء المنطقة.">
+                        ربط العملاء بقطع غيار السيارات المستعملة عالية الجودة في جميع أنحاء المنطقة.
+                    </p>
+                </div>
+                <div class="footer-links">
+                    <h3 data-en="Quick Links" data-ar="روابط سريعة">روابط سريعة</h3>
+                    <ul>
+                        <li><a href="index.html" data-en="Home" data-ar="الرئيسية">الرئيسية</a></li>
+                        <li><a href="search-results.html" data-en="Search Parts" data-ar="البحث عن قطع">البحث عن قطع</a>
+                        </li>
+                        <li><a href="auctions.html" data-en="Car Auctions" data-ar="مزادات السيارات">مزادات
+                                السيارات</a></li>
+                        <li><a href="salvage-yards.html" data-en="Salvage Yards" data-ar="التشاليح">التشاليح</a></li>
+                        <li><a href="register.html" data-en="Register" data-ar="التسجيل">التسجيل</a></li>
+                        <li><a href="login.html" data-en="Login" data-ar="تسجيل الدخول">تسجيل الدخول</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3 data-en="Contact Us" data-ar="اتصل بنا">اتصل بنا</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> المدينة المنورة, المملكة العربية السعودية</p>
+                    <p><i class="fas fa-phone"></i> +966 123 456 789</p>
+                    <p><i class="fas fa-envelope"></i> info@tashleeh-plus.sa</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-support">
+                    <h3 data-en="Support" data-ar="الدعم">الدعم</h3>
+                    <ul>
+                        <li><a href="faq.html" data-en="FAQ" data-ar="الأسئلة الشائعة">الأسئلة الشائعة</a></li>
+                        <li><a href="contact.html" data-en="Contact Support" data-ar="الاتصال بالدعم">الاتصال بالدعم</a>
+                        </li>
+                        <li><a href="privacy.html" data-en="Privacy Policy" data-ar="سياسة الخصوصية">سياسة الخصوصية</a>
+                        </li>
+                        <li><a href="terms.html" data-en="Terms of Service" data-ar="شروط الخدمة">شروط الخدمة</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 تشليح بلس. <span data-en="All Rights Reserved" data-ar="جميع الحقوق محفوظة">جميع الحقوق
+                        محفوظة</span>.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/language.js"></script>
+    <script src="js/mobile-menu.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/auction-details.js"></script>
+    <script src="js/mobile-menu-fix.js"></script>
+</body>
+
+</html>
+
+<!-- إضافة سكريبتات الإصلاح -->
+<script src="js/mobile-menu-fix.js"></script>
+
+<!-- إضافة سكريبت خاص لإصلاح مشكلة تصفح الصور -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        console.log('تم تحميل سكريبت إصلاح مشكلة تصفح الصور');
+
+        const mainImage = document.getElementById('auction-main-image');
+        const thumbnails = document.querySelectorAll('.thumbnail');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+
+        if (!mainImage || thumbnails.length === 0) {
+            console.error('لم يتم العثور على عناصر عرض الصور');
+            return;
+        }
+
+        console.log('تم العثور على ' + thumbnails.length + ' صورة مصغرة');
+
+        // تهيئة الصور المصغرة بشكل صحيح
+        let currentIndex = 0;
+
+        // التأكد من تحميل جميع الصور بشكل صحيح
+        thumbnails.forEach((thumbnail, index) => {
+            const img = thumbnail.querySelector('img');
+            img.onerror = function () {
+                console.error('فشل تحميل الصورة: ' + img.src);
+                img.src = 'images/auction-car-1.jpg'; // استبدال بصورة بديلة
+            };
+
+            // تعيين الفهرس لكل صورة مصغرة
+            thumbnail.setAttribute('data-index', index);
+
+            // تفعيل النقر على الصور المصغرة
+            thumbnail.addEventListener('click', function () {
+                const imgSrc = this.getAttribute('data-src');
+                currentIndex = parseInt(this.getAttribute('data-index'));
+
+                // تحديث الصورة الرئيسية
+                mainImage.src = imgSrc;
+
+                // تحديث الفئة النشطة
+                thumbnails.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+
+                console.log('تم تغيير الصورة إلى: ' + imgSrc);
+            });
+        });
+
+        // تفعيل أزرار التنقل
+        if (prevBtn && nextBtn) {
+            prevBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                currentIndex = (currentIndex - 1 + thumbnails.length) % thumbnails.length;
+                updateMainImage(currentIndex);
+            });
+
+            nextBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                currentIndex = (currentIndex + 1) % thumbnails.length;
+                updateMainImage(currentIndex);
+            });
+        }
+
+        // تحديث الصورة الرئيسية حسب الفهرس
+        function updateMainImage(index) {
+            const thumbnail = thumbnails[index];
+            const imgSrc = thumbnail.getAttribute('data-src');
+
+            mainImage.src = imgSrc;
+
+            thumbnails.forEach(t => t.classList.remove('active'));
+            thumbnail.classList.add('active');
+
+            console.log('تم تغيير الصورة إلى الفهرس: ' + index);
+        }
+
+        // إضافة دعم لمفاتيح لوحة المفاتيح للتنقل بين الصور
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'ArrowRight') {
+                // السهم الأيمن (التنقل للصورة السابقة في العربية)
+                prevBtn.click();
+            } else if (e.key === 'ArrowLeft') {
+                // السهم الأيسر (التنقل للصورة التالية في العربية)
+                nextBtn.click();
+            }
+        });
+    });
+</script>
+
+<!-- Scripts -->
+<script src="js/language.js"></script>
+<script src="js/mobile-menu.js"></script>
+<script src="js/main.js"></script>
+<script src="js/auction-details.js"></script>
+<script src="js/mobile-menu-fix.js"></script>
+
+</body>
+</html>

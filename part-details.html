@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفاصيل القطعة - تشليح بلس</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/part-details.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Font for Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <!-- Header Section -->
+    <header id="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="تشليح بلس - سوق قطع غيار السيارات المستعملة">
+                    <span class="logo-text">تشليح بلس</span>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" data-en="Home" data-ar="الرئيسية">الرئيسية</a></li>
+                    <li><a href="search-results.html" class="active" data-en="Search Parts" data-ar="بحث قطع">بحث قطع</a></li>
+                    <li><a href="auctions.html" data-en="Car Auctions" data-ar="مزادات السيارات">مزادات السيارات</a></li>
+                    <li><a href="employee.html" data-en="Employee Portal" data-ar="بوابة الموظفين">بوابة الموظفين</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <div class="language-switcher">
+                    <button id="lang-toggle" data-current="ar">
+                        <span data-en="العربية" data-ar="English">English</span>
+                    </button>
+                </div>
+                <div class="auth-buttons">
+                    <a href="login.html" class="btn btn-outline" data-en="Login" data-ar="تسجيل الدخول">تسجيل الدخول</a>
+                    <a href="register.html" class="btn btn-primary" data-en="Register" data-ar="التسجيل">التسجيل</a>
+                </div>
+                <div class="user-profile hidden">
+                    <a href="profile.html">
+                        <img src="images/user-placeholder.png" alt="الملف الشخصي للمستخدم">
+                    </a>
+                </div>
+            </div>
+            <button class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Page Title -->
+    <section class="page-title">
+        <div class="container">
+            <h1 data-en="Part Details" data-ar="تفاصيل القطعة">تفاصيل القطعة</h1>
+            <div class="breadcrumbs">
+                <a href="index.html" data-en="Home" data-ar="الرئيسية">الرئيسية</a>
+                <span class="separator">/</span>
+                <a href="search.html" data-en="Search Parts" data-ar="بحث قطع">بحث قطع</a>
+                <span class="separator">/</span>
+                <span data-en="Part Details" data-ar="تفاصيل القطعة">تفاصيل القطعة</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Part Details Section -->
+    <section class="part-details-section">
+        <div class="container">
+            <div class="part-details-container">
+                <!-- Part Images -->
+                <div class="part-images-container">
+                    <div class="main-image">
+                        <img src="images/parts/engine-cover-large.jpg" alt="غطاء محرك تويوتا كامري 2018">
+                        <div class="condition excellent">
+                            <span data-en="Excellent" data-ar="ممتازة">ممتازة</span>
+                        </div>
+                    </div>
+                    <div class="thumbnails">
+                        <div class="thumbnail active">
+                            <img src="images/parts/engine-cover-thumb1.jpg" alt="غطاء محرك - صورة 1">
+                        </div>
+                        <div class="thumbnail">
+                            <img src="images/parts/engine-cover-thumb2.jpg" alt="غطاء محرك - صورة 2">
+                        </div>
+                        <div class="thumbnail">
+                            <img src="images/parts/engine-cover-thumb3.jpg" alt="غطاء محرك - صورة 3">
+                        </div>
+                        <div class="thumbnail">
+                            <img src="images/parts/engine-cover-thumb4.jpg" alt="غطاء محرك - صورة 4">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Part Info -->
+                <div class="part-info-container">
+                    <h1 class="part-title"> محرك تويوتا كامري 2018</h1>
+
+                    <div class="part-price">
+                        <span class="price-value">4566</span>
+                        <span class="currency">ريال</span>
+                    </div>
+
+                    <div class="part-meta">
+                        <div class="meta-item">
+                            <span class="meta-label" data-en="Part Number:" data-ar="رقم القطعة:">رقم القطعة:</span>
+                            <span class="meta-value">TCHR1853-42</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label" data-en="Vehicle:" data-ar="السيارة:">السيارة:</span>
+                            <span class="meta-value">تويوتا كامري 2018</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label" data-en="Chassis Number:" data-ar="رقم الهيكل:">رقم الهيكل:</span>
+                            <span class="meta-value">5TD14BB7JU15****</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label" data-en="Availability:" data-ar="التوفر:">التوفر:</span>
+                            <span class="meta-value available">متوفر</span>
+                        </div>
+                    </div>
+
+                    <div class="part-actions">
+                        <a href="tel:+966123456789" class="btn btn-primary contact-btn">
+                            <i class="fas fa-phone"></i>
+                            <span data-en="Contact Salvage Yard" data-ar="اتصل بالتشليح">اتصل بالتشليح</span>
+                        </a>
+                        <a href="https://wa.me/966123456789" class="btn btn-outline whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i>
+                            <span data-en="WhatsApp" data-ar="واتساب">واتساب</span>
+                        </a>
+                        <button class="btn-icon btn-favorite" title="إضافة للمفضلة">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <button class="btn-icon btn-share" title="مشاركة">
+                            <i class="fas fa-share-alt"></i>
+                        </button>
+                    </div>
+
+                    <div class="salvage-yard-info">
+                        <div class="yard-header">
+                            <h3 data-en="Provided by:" data-ar="مقدم من:">مقدم من:</h3>
+                            <a href="salvage-yard.html?id=1" class="view-yard" data-en="View Salvage Yard"
+                                data-ar="عرض التشليح">عرض التشليح</a>
+                        </div>
+                        <div class="yard-details">
+                            <div class="yard-logo">
+                                <img src="images/yard-logo-1.png" alt="تشليح المدينة للسيارات">
+                            </div>
+                            <div class="yard-content">
+                                <h4>تشليح المدينة للسيارات</h4>
+                                <div class="yard-rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span class="rating-value">4.8</span>
+                                    <span class="reviews-count">(92 تقييم)</span>
+                                </div>
+                                <div class="yard-location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>المدينة المنورة, حي الفيصلية, شارع الملك فهد</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Part Details Tabs -->
+            <div class="part-details-tabs">
+                <div class="tabs-header">
+                    <button class="tab-btn active" data-tab="description" data-en="Description"
+                        data-ar="الوصف">الوصف</button>
+                    <button class="tab-btn" data-tab="specifications" data-en="Specifications"
+                        data-ar="المواصفات">المواصفات</button>
+                    <button class="tab-btn" data-tab="compatibility" data-en="Compatibility"
+                        data-ar="التوافق">التوافق</button>
+                    <button class="tab-btn" data-tab="reviews" data-en="Reviews" data-ar="التقييمات">التقييمات</button>
+                </div>
+
+                <div class="tabs-content">
+                    <!-- Description Tab -->
+                    <div class="tab-panel active" id="description-panel">
+                        <div class="description-content">
+                            <p> محرك لسيارة تويوتا كامري موديل 2018 بحالة المصنع. القطعة مستعملة ولكنها خالية من
+                                العيوب..</p>
+                            <p>تم فحص القطعة والتأكد من جودتها وتطابقها مع معايير الجودة لدينا..</p>
+                            <p>يأتي مع جميع نقاط التثبيت والضفيرة الخاصه به وضمان لمدة شهر من تاريخ الشراء يقدم من
+                                التشليح.</p>
+
+                            <div class="note-box">
+                                <h4 data-en="Note:" data-ar="ملاحظة:">ملاحظة:</h4>
+                                <p>يتم توفير معلومات دقيقة قدر الإمكان عن حالة القطعة، ولكن ينصح بالتحقق من توافق القطعة
+                                    مع سيارتك قبل الشراء. نوصي بمقارنة رقم القطعة مع دليل المالك أو التواصل مع التشليح
+                                    مباشرة للتأكد من التوافق.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Specifications Tab -->
+                    <div class="tab-panel" id="specifications-panel">
+                        <div class="specifications-content">
+                            <div class="spec-group">
+                                <h4 data-en="Part Details" data-ar="تفاصيل القطعة">تفاصيل القطعة</h4>
+                                <table class="spec-table">
+                                    <tr>
+                                        <td class="spec-name" data-en="Part Name" data-ar="اسم القطعة">اسم القطعة</td>
+                                        <td class="spec-value"> محرك</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="spec-name" data-en="Manufacturer" data-ar="الشركة المصنعة">الشركة
+                                            المصنعة</td>
+                                        <td class="spec-value">تويوتا</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="spec-name" data-en="Part Type" data-ar="نوع القطعة">نوع القطعة</td>
+                                        <td class="spec-value">أصلية (OEM)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="spec-name" data-en="Color" data-ar="اللون">اللون</td>
+                                        <td class="spec-value">اسود </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="spec-name" data-en="Material" data-ar="المادة">المادة</td>
+                                        <td class="spec-value">ألمنيوم</td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <div class="spec-group">
+                                <h4 data-en="Condition" data-ar="الحالة">الحالة</h4>
+                                <table class="spec-table">
+                                    <tr>
+                                        <td class="spec-name" data-en="Condition Rating" data-ar="تقييم الحالة">تقييم
+                                            الحالة</td>
+                                        <td class="spec-value">ممتازة</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="spec-name" data-en="Usage History" data-ar="تاريخ الاستخدام">تاريخ
+                                            الاستخدام</td>
+                                        <td class="spec-value">مستعمل - بحالة ممتازة</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="spec-name" data-en="Manufacturing Date" data-ar="تاريخ التصنيع">تاريخ
+                                            التصنيع</td>
+                                        <td class="spec-value">2018</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="spec-name" data-en="Defects" data-ar="العيوب">العيوب</td>
+                                        <td class="spec-value">لا يوجد</td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <div class="spec-group">
+                                <h4 data-en="Dimensions" data-ar="الأبعاد">الأبعاد</h4>
+                                <table class="spec-table">
+                                    <tr>
+                                        <td class="spec-name" data-en="Length" data-ar="الطول">الطول</td>
+                                        <td class="spec-value">92 سم</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="spec-name" data-en="Width" data-ar="العرض">العرض</td>
+                                        <td class="spec-value">110 سم</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="spec-name" data-en="Weight" data-ar="الوزن">الوزن</td>
+                                        <td class="spec-value">50 كغم</td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <div class="spec-group">
+                                <h4 data-en="Additional Information" data-ar="معلومات إضافية">معلومات إضافية</h4>
+                                <table class="spec-table">
+                                    <tr>
+                                        <td class="spec-name" data-en="Warranty" data-ar="الضمان">الضمان</td>
+                                        <td class="spec-value">ستة شهور من التشليح</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="spec-name" data-en="Return Policy" data-ar="سياسة الاسترجاع">سياسة
+                                            الاسترجاع</td>
+                                        <td class="spec-value">3 أيام</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="spec-name" data-en="Shipping" data-ar="الشحن">الشحن</td>
+                                        <td class="spec-value">غير متوفر (استلام من الموقع)</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Compatibility Tab -->
+                    <div class="tab-panel" id="compatibility-panel">
+                        <div class="compatibility-content">
+                            <p class="compatibility-note"
+                                data-en="This part is compatible with the following vehicle models:"
+                                data-ar="هذه القطعة متوافقة مع طرازات السيارات التالية:">هذه القطعة متوافقة مع طرازات
+                                السيارات التالية:</p>
+
+                            <div class="compatible-models">
+                                <div class="model-card">
+                                    <div class="car-icon">
+                                        <i class="fas fa-car"></i>
+                                    </div>
+                                    <div class="model-info">
+                                        <h4>تويوتا كامري 2018</h4>
+                                        <p>جميع الإصدارات</p>
+                                    </div>
+                                </div>
+
+                                <div class="model-card">
+                                    <div class="car-icon">
+                                        <i class="fas fa-car"></i>
+                                    </div>
+                                    <div class="model-info">
+                                        <h4>تويوتا كامري 2019</h4>
+                                        <p>جميع الإصدارات</p>
+                                    </div>
+                                </div>
+
+                                <div class="model-card">
+                                    <div class="car-icon">
+                                        <i class="fas fa-car"></i>
+                                    </div>
+                                    <div class="model-info">
+                                        <h4>تويوتا كامري 2020</h4>
+                                        <p>SE, LE, XLE فقط</p>
+                                    </div>
+                                </div>
+
+                                <div class="model-card">
+                                    <div class="car-icon compatibility-partial">
+                                        <i class="fas fa-car"></i>
+                                    </div>
+                                    <div class="model-info">
+                                        <h4>تويوتا أفالون 2018-2019</h4>
+                                        <p>قد يحتاج إلى تعديلات طفيفة</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="compatibility-check">
+                                <h4 data-en="Check Compatibility with Your Vehicle" data-ar="تحقق من التوافق مع سيارتك">
+                                    تحقق من التوافق مع سيارتك</h4>
+                                <form class="compatibility-form">
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="check-make" data-en="Make" data-ar="الشركة المصنعة">الشركة
+                                                المصنعة</label>
+                                            <select id="check-make" name="make">
+                                                <option value="">اختر الشركة</option>
+                                                <option value="toyota" selected>تويوتا</option>
+                                                <option value="honda">هوندا</option>
+                                                <option value="nissan">نيسان</option>
+                                                <option value="ford">فورد</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="check-model" data-en="Model" data-ar="الموديل">الموديل</label>
+                                            <select id="check-model" name="model">
+                                                <option value="">اختر الموديل</option>
+                                                <option value="camry" selected>كامري</option>
+                                                <option value="corolla">كورولا</option>
+                                                <option value="avalon">أفالون</option>
+                                                <option value="rav4">راف 4</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="check-year" data-en="Year" data-ar="السنة">السنة</label>
+                                            <select id="check-year" name="year">
+                                                <option value="">اختر السنة</option>
+                                                <option value="2021">2021</option>
+                                                <option value="2020">2020</option>
+                                                <option value="2019">2019</option>
+                                                <option value="2018" selected>2018</option>
+                                                <option value="2017">2017</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-check-compatibility"
+                                        data-en="Check Compatibility" data-ar="تحقق من التوافق">تحقق من التوافق</button>
+                                </form>
+                                <div class="compatibility-result compatible">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span data-en="This part is compatible with your vehicle!"
+                                        data-ar="هذه القطعة متوافقة مع سيارتك!">هذه القطعة متوافقة مع سيارتك!</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reviews Tab -->
+                    <div class="tab-panel" id="reviews-panel">
+                        <div class="reviews-content">
+                            <div class="reviews-summary">
+                                <div class="overall-rating">
+                                    <div class="rating-number">4.5</div>
+                                    <div class="rating-stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <div class="rating-count" data-en="Based on 18 reviews"
+                                        data-ar="بناءً على 18 تقييم">بناءً على 18 تقييم</div>
+                                </div>
+                                <div class="rating-breakdown">
+                                    <div class="rating-row">
+                                        <div class="rating-label">5 <i class="fas fa-star"></i></div>
+                                        <div class="rating-bar">
+                                            <div class="rating-fill" style="width: 75%"></div>
+                                        </div>
+                                        <div class="rating-percentage">75%</div>
+                                    </div>
+                                    <div class="rating-row">
+                                        <div class="rating-label">4 <i class="fas fa-star"></i></div>
+                                        <div class="rating-bar">
+                                            <div class="rating-fill" style="width: 15%"></div>
+                                        </div>
+                                        <div class="rating-percentage">15%</div>
+                                    </div>
+                                    <div class="rating-row">
+                                        <div class="rating-label">3 <i class="fas fa-star"></i></div>
+                                        <div class="rating-bar">
+                                            <div class="rating-fill" style="width: 5%"></div>
+                                        </div>
+                                        <div class="rating-percentage">5%</div>
+                                    </div>
+                                    <div class="rating-row">
+                                        <div class="rating-label">2 <i class="fas fa-star"></i></div>
+                                        <div class="rating-bar">
+                                            <div class="rating-fill" style="width: 3%"></div>
+                                        </div>
+                                        <div class="rating-percentage">3%</div>
+                                    </div>
+                                    <div class="rating-row">
+                                        <div class="rating-label">1 <i class="fas fa-star"></i></div>
+                                        <div class="rating-bar">
+                                            <div class="rating-fill" style="width: 2%"></div>
+                                        </div>
+                                        <div class="rating-percentage">2%</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="reviews-list">
+                                <div class="review-item">
+                                    <div class="review-header">
+                                        <div class="reviewer-info">
+                                            <div class="reviewer-avatar">
+                                                <img src="images/avatar-1.jpg" alt="صورة المستخدم">
+                                            </div>
+                                            <div class="reviewer-meta">
+                                                <div class="reviewer-name">أحمد محمد</div>
+                                                <div class="review-date">15 يناير 2025</div>
+                                            </div>
+                                        </div>
+                                        <div class="review-rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <div class="review-content">
+                                        <p>قطعة ممتازة وتناسب سيارتي تماماً. الشكل والمقاسات مطابقة للأصلية وكأنها
+                                            جديدة. التشليح كان متعاون جداً وساعدني في التأكد من التوافق قبل الشراء. أنصح
+                                            بها بشدة.</p>
+                                    </div>
+                                </div>
+
+                                <div class="review-item">
+                                    <div class="review-header">
+                                        <div class="reviewer-info">
+                                            <div class="reviewer-avatar">
+                                                <img src="images/avatar-2.png" alt="صورة المستخدم">
+                                            </div>
+                                            <div class="reviewer-meta">
+                                                <div class="reviewer-name">حسون البارقي</div>
+                                                <div class="review-date">3 فبراير 2025</div>
+                                            </div>
+                                        </div>
+                                        <div class="review-rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <div class="review-content">
+                                        <p>القطعة بحالة جيدة جداً لكن كان هناك خدش صغير لم يتم ذكره في الوصف. بخلاف ذلك،
+                                            التركيب كان سهلاً والقطعة تناسب السيارة بشكل ممتاز. السعر معقول مقارنة
+                                            بالجديدة من الوكالة.</p>
+                                    </div>
+                                </div>
+
+                                <div class="review-item">
+                                    <div class="review-header">
+                                        <div class="reviewer-info">
+                                            <div class="reviewer-avatar">
+                                                <img src="images/avatar-3.png" alt="صورة المستخدم">
+                                            </div>
+                                            <div class="reviewer-meta">
+                                                <div class="reviewer-name">عبدالرحمن </div>
+                                                <div class="review-date">20 فبراير 2025</div>
+                                            </div>
+                                        </div>
+                                        <div class="review-rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <div class="review-content">
+                                        <p>السعر مرتفع قليلاً مقارنة بما توقعت. القطعة بحالة جيدة ولكن احتاجت بعض
+                                            التعديلات البسيطة لتتناسب تماماً مع سيارتي (كامري 2020). أقترح للتشليح تحديث
+                                            معلومات التوافق بشكل أدق.</p>
+                                    </div>
+                                </div>
+
+                                <div class="review-load-more">
+                                    <button class="btn btn-outline" data-en="Load More Reviews"
+                                        data-ar="تحميل المزيد من التقييمات">تحميل المزيد من التقييمات</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Similar Parts -->
+            <div class="similar-parts">
+                <h2 class="section-title" data-en="Similar Parts" data-ar="قطع مشابهة">قطع مشابهة</h2>
+                <div class="parts-slider">
+                    <div class="part-card">
+                        <div class="part-images">
+                            <div class="main-image">
+                                <img src="images/parts/bumpercamry.png" alt="صدام أمامي تويوتا كامري 2018">
+                            </div>
+                            <div class="condition good">
+                                <span data-en="Good" data-ar="جيدة">جيدة</span>
+                            </div>
+                        </div>
+                        <div class="part-details">
+                            <h3>صدام أمامي تويوتا كامري 2018</h3>
+                            <div class="part-meta">
+                                <div class="car-info">تويوتا كامري 2018</div>
+                                <div class="yard-info">
+                                    <a href="salvage-yard.html?id=1">تشليح المدينة للسيارات</a>
+                                    <div class="yard-rating">
+                                        <i class="fas fa-star"></i>
+                                        <span>4.8</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="part-price-actions">
+                                <div class="price">950 ريال</div>
+                                <div class="actions">
+                                    <a href="part-details.html?id=7" class="btn btn-primary" data-en="View Details"
+                                        data-ar="عرض التفاصيل">عرض التفاصيل</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="part-card">
+                        <div class="part-images">
+                            <div class="main-image">
+                                <img src="images/parts/funder.png" alt="رفرف أمامي يمين تويوتا كامري 2018">
+                            </div>
+                            <div class="condition excellent">
+                                <span data-en="Excellent" data-ar="ممتازة">ممتازة</span>
+                            </div>
+                        </div>
+                        <div class="part-details">
+                            <h3>رفرف أمامي يمين تويوتا كامري 2018</h3>
+                            <div class="part-meta">
+                                <div class="car-info">تويوتا كامري 2018</div>
+                                <div class="yard-info">
+                                    <a href="salvage-yard.html?id=1">تشليح المدينة للسيارات</a>
+                                    <div class="yard-rating">
+                                        <i class="fas fa-star"></i>
+                                        <span>4.8</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="part-price-actions">
+                                <div class="price">650 ريال</div>
+                                <div class="actions">
+                                    <a href="part-details.html?id=8" class="btn btn-primary" data-en="View Details"
+                                        data-ar="عرض التفاصيل">عرض التفاصيل</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="part-card">
+                        <div class="part-images">
+                            <div class="main-image">
+                                <img src="images/parts/grille.png" alt="شبك أمامي تويوتا كامري 2018">
+                            </div>
+                            <div class="condition good">
+                                <span data-en="Good" data-ar="جيدة">جيدة</span>
+                            </div>
+                        </div>
+                        <div class="part-details">
+                            <h3>شبك أمامي تويوتا كامري 2018</h3>
+                            <div class="part-meta">
+                                <div class="car-info">تويوتا كامري 2018</div>
+                                <div class="yard-info">
+                                    <a href="salvage-yard.html?id=2">المركز السعودي للتشليح</a>
+                                    <div class="yard-rating">
+                                        <i class="fas fa-star"></i>
+                                        <span>4.6</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="part-price-actions">
+                                <div class="price">450 ريال</div>
+                                <div class="actions">
+                                    <a href="part-details.html?id=9" class="btn btn-primary" data-en="View Details"
+                                        data-ar="عرض التفاصيل">عرض التفاصيل</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="part-card">
+                        <div class="part-images">
+                            <div class="main-image">
+                                <img src="images/parts/light.png" alt="مصباح أمامي يسار تويوتا كامري 2018">
+                            </div>
+                            <div class="condition average">
+                                <span data-en="Average" data-ar="متوسطة">متوسطة</span>
+                            </div>
+                        </div>
+                        <div class="part-details">
+                            <h3>مصباح أمامي يسار تويوتا كامري 2018</h3>
+                            <div class="part-meta">
+                                <div class="car-info">تويوتا كامري 2018</div>
+                                <div class="yard-info">
+                                    <a href="salvage-yard.html?id=3">تشليح المدينة للقطع والخدمات</a>
+                                    <div class="yard-rating">
+                                        <i class="fas fa-star"></i>
+                                        <span>4.5</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="part-price-actions">
+                                <div class="price">550 ريال</div>
+                                <div class="actions">
+                                    <a href="part-details.html?id=10" class="btn btn-primary" data-en="View Details"
+                                        data-ar="عرض التفاصيل">عرض التفاصيل</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Share Modal -->
+    <div class="modal" id="share-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 data-en="Share This Part" data-ar="مشاركة هذه القطعة">مشاركة هذه القطعة</h3>
+                <button class="modal-close"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <p data-en="Share this part with others:" data-ar="مشاركة هذه القطعة مع الآخرين:">مشاركة هذه القطعة مع
+                    الآخرين:</p>
+                <div class="share-options">
+                    <a href="#" class="share-option whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>واتساب</span>
+                    </a>
+                    <a href="#" class="share-option facebook">
+                        <i class="fab fa-facebook-f"></i>
+                        <span>فيسبوك</span>
+                    </a>
+                    <a href="#" class="share-option twitter">
+                        <i class="fab fa-twitter"></i>
+                        <span>تويتر</span>
+                    </a>
+                    <a href="#" class="share-option telegram">
+                        <i class="fab fa-telegram-plane"></i>
+                        <span>تلجرام</span>
+                    </a>
+                    <a href="#" class="share-option email">
+                        <i class="fas fa-envelope"></i>
+                        <span>بريد إلكتروني</span>
+                    </a>
+                </div>
+                <div class="share-link">
+                    <input type="text" id="share-url" value="https://tashleeh-plus.sa/part-details.html?id=1" readonly>
+                    <button class="btn btn-copy-link" data-en="Copy Link" data-ar="نسخ الرابط">نسخ الرابط</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <img src="images/logo-white.png" alt="تشليح بلس" class="footer-logo">
+                    <div class="logo-text-footer">تشليح بلس</div>
+                    <p data-en="Connecting customers with quality used auto parts across the region."
+                        data-ar="ربط العملاء بقطع غيار السيارات المستعملة عالية الجودة في جميع أنحاء المنطقة."
+                        ربط العملاء بقطع غيار السيارات المستعملة عالية الجودة في جميع أنحاء المنطقة.
+                    </p>
+                </div>
+                <div class="footer-links">
+                    <h3 data-en="Quick Links" data-ar="روابط سريعة">روابط سريعة</h3>
+                    <ul>
+                        <li><a href="index.html" data-en="Home" data-ar="الرئيسية">الرئيسية</a></li>
+                        <li><a href="search.html" data-en="Search Parts" data-ar="البحث عن قطع">البحث عن قطع</a></li>
+                        <li><a href="auctions.html" data-en="Car Auctions" data-ar="مزادات السيارات">مزادات السيارات</a>
+                        </li>
+                        <li><a href="salvage-yards.html" data-en="Salvage Yards" data-ar="التشاليح">التشاليح</a></li>
+                        <li><a href="register.html" data-en="Register" data-ar="التسجيل">التسجيل</a></li>
+                        <li><a href="login.html" data-en="Login" data-ar="تسجيل الدخول">تسجيل الدخول</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3 data-en="Contact Us" data-ar="اتصل بنا">اتصل بنا</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> المدينة المنورة, المملكة العربية السعودية</p>
+                    <p><i class="fas fa-phone"></i> +966 123 456 789</p>
+                    <p><i class="fas fa-envelope"></i> info@tashleeh-plus.sa</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-support">
+                    <h3 data-en="Support" data-ar="الدعم">الدعم</h3>
+                    <ul>
+                        <li><a href="faq.html" data-en="FAQ" data-ar="الأسئلة الشائعة">الأسئلة الشائعة</a></li>
+                        <li><a href="contact.html" data-en="Contact Support" data-ar="الاتصال بالدعم">الاتصال بالدعم</a>
+                        </li>
+                        <li><a href="privacy.html" data-en="Privacy Policy" data-ar="سياسة الخصوصية">سياسة الخصوصية</a>
+                        </li>
+                        <li><a href="terms.html" data-en="Terms of Service" data-ar="شروط الخدمة">شروط الخدمة</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 تشليح بلس. <span data-en="All Rights Reserved" data-ar="جميع الحقوق محفوظة">جميع الحقوق
+                        محفوظة</span>.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/language.js"></script>
+    <script src="js/mobile-menu.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/part-details.js"></script>
+    <script src="js/mobile-menu-fix.js"></script>
+</body>
+
+</html>

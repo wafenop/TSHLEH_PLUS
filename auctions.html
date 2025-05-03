@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مزادات السيارات - تشليح بلس</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/auctions.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Font for Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header id="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="تشليح بلس - سوق قطع غيار السيارات المستعملة">
+                    <span class="logo-text">تشليح بلس</span>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" data-en="Home" data-ar="الرئيسية">الرئيسية</a></li>
+                    <li><a href="search-results.html" data-en="Search Parts" data-ar="بحث قطع">بحث قطع</a></li>
+                    <li><a href="auctions.html" class="active" data-en="Car Auctions" data-ar="مزادات السيارات">مزادات السيارات</a></li>
+                    <li><a href="employee.html" data-en="Employee Portal" data-ar="بوابة الموظفين">بوابة الموظفين</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <div class="language-switcher">
+                    <button id="lang-toggle" data-current="ar">
+                        <span data-en="العربية" data-ar="English">English</span>
+                    </button>
+                </div>
+                <div class="auth-buttons">
+                    <a href="login.html" class="btn btn-outline" data-en="Login" data-ar="تسجيل الدخول">تسجيل الدخول</a>
+                    <a href="register.html" class="btn btn-primary" data-en="Register" data-ar="التسجيل">التسجيل</a>
+                </div>
+                <div class="user-profile hidden">
+                    <a href="profile.html">
+                        <img src="images/user-placeholder.png" alt="الملف الشخصي للمستخدم">
+                    </a>
+                </div>
+            </div>
+            <button class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="auctions-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 data-en="Car Auctions for Salvage Yard Owners" data-ar="مزادات السيارات لمالكي التشاليح">مزادات السيارات لمالكي التشاليح</h1>
+                <p data-en="Gain exclusive access to car auctions and acquire vehicles at competitive prices to expand your salvage yard inventory." 
+                   data-ar="احصل على وصول حصري لمزادات السيارات واقتنِ المركبات بأسعار تنافسية لتوسيع مخزون تشليحك.">
+                    احصل على وصول حصري لمزادات السيارات واقتنِ المركبات بأسعار تنافسية لتوسيع مخزون تشليحك.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Auctions Alert Section -->
+    <section class="auctions-alert">
+        <div class="container">
+            <div class="alert-content">
+                <i class="fas fa-info-circle"></i>
+                <div class="alert-text">
+                    <p data-en="These auctions are only available for registered salvage yard owners." 
+                       data-ar="هذه المزادات متاحة فقط لمالكي التشاليح المسجلين.">
+                       هذه المزادات متاحة فقط لمالكي التشاليح المسجلين.
+                    </p>
+                    <a href="register-yard.html" class="btn btn-outline" data-en="Register Your Salvage Yard" data-ar="سجل تشليحك">سجل تشليحك</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Auctions Filter Section -->
+    <section class="auctions-filter">
+        <div class="container">
+            <div class="filter-form">
+                <div class="filter-header">
+                    <h2 data-en="Filter Auctions" data-ar="تصفية المزادات">تصفية المزادات</h2>
+                    <button class="filter-toggle">
+                        <i class="fas fa-sliders-h"></i>
+                        <span data-en="Filters" data-ar="الفلاتر">الفلاتر</span>
+                    </button>
+                </div>
+                <div class="filter-body">
+                    <form id="auctions-filter-form">
+                        <div class="filter-grid">
+                            <div class="form-group">
+                                <label data-en="Manufacturer" data-ar="الشركة المصنعة">الشركة المصنعة</label>
+                                <select name="manufacturer">
+                                    <option value="" data-en="All Manufacturers" data-ar="جميع الشركات">جميع الشركات</option>
+                                    <option value="toyota">تويوتا</option>
+                                    <option value="honda">هوندا</option>
+                                    <option value="nissan">نيسان</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label data-en="Year Range" data-ar="نطاق السنة">نطاق السنة</label>
+                                <div class="year-range">
+                                    <select name="year_from">
+                                        <option value="" data-en="From" data-ar="من">من</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2020">2020</option>
+                                        <option value="2019">2019</option>
+                                        <option value="2018">2018</option>
+                                        <option value="2017">2017</option>
+                                    </select>
+                                    <span class="range-separator">-</span>
+                                    <select name="year_to">
+                                        <option value="" data-en="To" data-ar="إلى">إلى</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2020">2020</option>
+                                        <option value="2019">2019</option>
+                                        <option value="2018">2018</option>
+                                        <option value="2017">2017</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label data-en="Damage Type" data-ar="نوع الضرر">نوع الضرر</label>
+                                <select name="damage_type">
+                                    <option value="" data-en="All Types" data-ar="جميع الأنواع">جميع الأنواع</option>
+                                    <option value="front">أمامي</option>
+                                    <option value="rear">خلفي</option>
+                                    <option value="side">جانبي</option>
+                                    <option value="flood">غرق</option>
+                                    <option value="fire">حريق</option>
+                                    <option value="mechanical">عطل ميكانيكي</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label data-en="Price Range" data-ar="نطاق السعر">نطاق السعر</label>
+                                <div class="price-range">
+                                    <input type="number" name="price_from" placeholder="من" data-en-placeholder="From" data-ar-placeholder="من">
+                                    <span class="range-separator">-</span>
+                                    <input type="number" name="price_to" placeholder="إلى" data-en-placeholder="To" data-ar-placeholder="إلى">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter-grid">
+                            <div class="form-group">
+                                <label data-en="Status" data-ar="الحالة">الحالة</label>
+                                <div class="checkbox-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="status" value="active" checked>
+                                        <span data-en="Active Auctions" data-ar="مزادات نشطة">مزادات نشطة</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="status" value="ending_soon">
+                                        <span data-en="Ending Soon" data-ar="تنتهي قريباً">تنتهي قريباً</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="status" value="completed">
+                                        <span data-en="Completed Auctions" data-ar="مزادات منتهية">مزادات منتهية</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label data-en="Location" data-ar="الموقع">الموقع</label>
+                                <select name="location">
+                                    <option value="" data-en="All Locations" data-ar="جميع المواقع">جميع المواقع</option>
+                                    <option value="riyadh">الرياض</option>
+                                    <option value="jeddah">جدة</option>
+                                    <option value="dammam">الدمام</option>
+                                    <option value="madinah">المدينة المنورة</option>
+                                    <option value="makkah">مكة المكرمة</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label data-en="Sort By" data-ar="ترتيب حسب">ترتيب حسب</label>
+                                <select name="sort_by">
+                                    <option value="end_time_asc" data-en="Ending Soon" data-ar="تنتهي قريباً">تنتهي قريباً</option>
+                                    <option value="time_desc" data-en="Newly Listed" data-ar="أحدث المزادات">أحدث المزادات</option>
+                                    <option value="price_asc" data-en="Price (Low to High)" data-ar="السعر (الأقل للأعلى)">السعر (الأقل للأعلى)</option>
+                                    <option value="price_desc" data-en="Price (High to Low)" data-ar="السعر (الأعلى للأقل)">السعر (الأعلى للأقل)</option>
+                                    <option value="bids_desc" data-en="Most Bids" data-ar="الأكثر مزايدة">الأكثر مزايدة</option>
+                                </select>
+                            </div>
+                            <div class="form-group filter-actions">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-search"></i>
+                                    <span data-en="Apply Filters" data-ar="تطبيق الفلاتر">تطبيق الفلاتر</span>
+                                </button>
+                                <button type="reset" class="btn btn-outline">
+                                    <i class="fas fa-redo"></i>
+                                    <span data-en="Reset" data-ar="إعادة ضبط">إعادة ضبط</span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Active Auctions Section -->
+    <section class="auctions-list">
+        <div class="container">
+            <h2 class="section-title" data-en="Active Auctions" data-ar="المزادات النشطة">المزادات النشطة</h2>
+            
+            <div class="auctions-grid">
+                <!-- تويوتا كامري 2018 -->
+                <div class="auction-card">
+                    <div class="auction-img">
+                        <img src="images/auction-car-1.jpg" alt="تويوتا كامري 2018">
+                        <div class="auction-badge">
+                            <i class="fas fa-fire"></i>
+                            <span data-en="Hot" data-ar="رائج">رائج</span>
+                        </div>
+                        <div class="time-remaining">
+                            <i class="fas fa-clock"></i>
+                            <span>22:45:10</span>
+                        </div>
+                    </div>
+                    <div class="auction-details">
+                        <div class="auction-header">
+                            <h3>تويوتا كامري 2018</h3>
+                            <div class="auction-meta">
+                                <div class="location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>الرياض</span>
+                                </div>
+                                <div class="damage-type">
+                                    <i class="fas fa-car-crash"></i>
+                                    <span>تصادم أمامي</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="auction-stats">
+                            <div class="current-bid">
+                                <span class="label" data-en="Current Bid" data-ar="العرض الحالي">العرض الحالي</span>
+                                <span class="value">38,550 ريال</span>
+                            </div>
+                            <div class="bids-count">
+                                <span class="label" data-en="Bids" data-ar="المزايدات">المزايدات</span>
+                                <span class="value">8</span>
+                            </div>
+                        </div>
+                        <div class="auction-footer">
+                            <div class="condition-tags">
+                                <span class="condition-tag excellent" data-en="Engine: Excellent" data-ar="المحرك: ممتاز">المحرك: ممتاز</span>
+                                <span class="condition-tag good" data-en="Transmission: Good" data-ar="الجير: جيد">الجير: جيد</span>
+                            </div>
+                            <a href="auction-details.html?id=1" class="btn btn-primary" data-en="View Auction" data-ar="عرض المزاد">عرض المزاد</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- هوندا أكورد 2017 -->
+                <div class="auction-card">
+                    <div class="auction-img">
+                        <img src="images/auction-car-2.jpg" alt="هوندا أكورد 2017">
+                        <div class="time-remaining">
+                            <i class="fas fa-clock"></i>
+                            <span>46:30:22</span>
+                        </div>
+                    </div>
+                    <div class="auction-details">
+                        <div class="auction-header">
+                            <h3>هوندا أكورد 2017</h3>
+                            <div class="auction-meta">
+                                <div class="location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>جدة</span>
+                                </div>
+                                <div class="damage-type">
+                                    <i class="fas fa-car-crash"></i>
+                                    <span>تصادم خلفي</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="auction-stats">
+                            <div class="current-bid">
+                                <span class="label" data-en="Current Bid" data-ar="العرض الحالي">العرض الحالي</span>
+                                <span class="value">41,200 ريال</span>
+                            </div>
+                            <div class="bids-count">
+                                <span class="label" data-en="Bids" data-ar="المزايدات">المزايدات</span>
+                                <span class="value">5</span>
+                            </div>
+                        </div>
+                        <div class="auction-footer">
+                            <div class="condition-tags">
+                                <span class="condition-tag excellent" data-en="Engine: Excellent" data-ar="المحرك: ممتاز">المحرك: ممتاز</span>
+                                <span class="condition-tag excellent" data-en="Transmission: Excellent" data-ar="الجير: ممتاز">الجير: ممتاز</span>
+                            </div>
+                            <a href="auction-details.html?id=2" class="btn btn-primary" data-en="View Auction" data-ar="عرض المزاد">عرض المزاد</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- نيسان التيما 2019 -->
+                <div class="auction-card">
+                    <div class="auction-img">
+                        <img src="images/auction-car-3.jpg" alt="نيسان التيما 2019">
+                        <div class="auction-badge ending">
+                            <i class="fas fa-exclamation-circle"></i>
+                            <span data-en="Ending Soon" data-ar="ينتهي قريباً">ينتهي قريباً</span>
+                        </div>
+                        <div class="time-remaining">
+                            <i class="fas fa-clock"></i>
+                            <span>12:15:40</span>
+                        </div>
+                    </div>
+                    <div class="auction-details">
+                        <div class="auction-header">
+                            <h3>نيسان التيما 2019</h3>
+                            <div class="auction-meta">
+                                <div class="location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>الدمام</span>
+                                </div>
+                                <div class="damage-type">
+                                    <i class="fas fa-car-crash"></i>
+                                    <span>تصادم جانبي</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="auction-stats">
+                            <div class="current-bid">
+                                <span class="label" data-en="Current Bid" data-ar="العرض الحالي">العرض الحالي</span>
+                                <span class="value">35,800 ريال</span>
+                            </div>
+                            <div class="bids-count">
+                                <span class="label" data-en="Bids" data-ar="المزايدات">المزايدات</span>
+                                <span class="value">12</span>
+                            </div>
+                        </div>
+                        <div class="auction-footer">
+                            <div class="condition-tags">
+                                <span class="condition-tag good" data-en="Engine: Good" data-ar="المحرك: جيد">المحرك: جيد</span>
+                                <span class="condition-tag good" data-en="Transmission: Good" data-ar="الجير: جيد">الجير: جيد</span>
+                            </div>
+                            <a href="auction-details.html?id=3" class="btn btn-primary" data-en="View Auction" data-ar="عرض المزاد">عرض المزاد</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pagination -->
+            <div class="pagination">
+                <a href="#" class="pagination-item active">1</a>
+                <a href="#" class="pagination-item">2</a>
+                <a href="#" class="pagination-item">3</a>
+                <span class="pagination-dots">...</span>
+                <a href="#" class="pagination-item">10</a>
+                <a href="#" class="pagination-arrow">
+                    <i class="fas fa-chevron-left"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Auctions Preview -->
+    <section class="upcoming-auctions">
+        <div class="container">
+            <h2 class="section-title" data-en="Upcoming Auctions" data-ar="المزادات القادمة">المزادات القادمة</h2>
+            <div class="upcoming-list">
+                <div class="upcoming-card">
+                    <div class="upcoming-img">
+                        <img src="images/upcoming-car-1.jpg" alt="تويوتا لاندكروزر 2020">
+                    </div>
+                    <div class="upcoming-details">
+                        <h3>تويوتا لاندكروزر 2020</h3>
+                        <div class="upcoming-meta">
+                            <div class="damage-type">
+                                <i class="fas fa-car-crash"></i>
+                                <span>تصادم أمامي</span>
+                            </div>
+                            <div class="location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>الرياض</span>
+                            </div>
+                        </div>
+                        <div class="starting-bid">
+                            <span class="label" data-en="Starting Bid" data-ar="بداية المزاد">بداية المزاد</span>
+                            <span class="value">90,000 ريال</span>
+                        </div>
+                        <div class="start-date">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span data-en="Starts on" data-ar="يبدأ في">يبدأ في:</span>
+                            <span class="date">١٥ مايو ٢٠٢٥، الساعة ١٠:٠٠ صباحاً</span>
+                        </div>
+                        <button class="btn btn-outline reminder-btn">
+                            <i class="fas fa-bell"></i>
+                            <span data-en="Remind Me" data-ar="ذكرني">ذكرني</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="upcoming-card">
+                    <div class="upcoming-img">
+                        <img src="images/upcoming-car-2.jpg" alt="بي إم دبليو X5 2019">
+                    </div>
+                    <div class="upcoming-details">
+                        <h3>بي إم دبليو X5 2019</h3>
+                        <div class="upcoming-meta">
+                            <div class="damage-type">
+                                <i class="fas fa-car-crash"></i>
+                                <span>تصادم خلفي</span>
+                            </div>
+                            <div class="location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>جدة</span>
+                            </div>
+                        </div>
+                        <div class="starting-bid">
+                            <span class="label" data-en="Starting Bid" data-ar="بداية المزاد">بداية المزاد</span>
+                            <span class="value">85,000 ريال</span>
+                        </div>
+                        <div class="start-date">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span data-en="Starts on" data-ar="يبدأ في">يبدأ في:</span>
+                            <span class="date">١٧ مايو ٢٠٢٥، الساعة ٢:٠٠ مساءً</span>
+                        </div>
+                        <button class="btn btn-outline reminder-btn">
+                            <i class="fas fa-bell"></i>
+                            <span data-en="Remind Me" data-ar="ذكرني">ذكرني</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How Auction Works Section -->
+    <section class="auction-how-it-works">
+        <div class="container">
+            <h2 class="section-title" data-en="How Car Auctions Work" data-ar="كيف تعمل مزادات السيارات">كيف تعمل مزادات السيارات</h2>
+            <div class="how-steps-container">
+                <div class="how-step-card">
+                    <div class="step-icon">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <h3 data-en="Register" data-ar="التسجيل">التسجيل</h3>
+                    <p data-en="Register your salvage yard to get access to exclusive car auctions." 
+                       data-ar="سجل تشليحك للحصول على وصول حصري لمزادات السيارات.">
+                       سجل تشليحك للحصول على وصول حصري لمزادات السيارات.
+                    </p>
+                </div>
+                <div class="how-step-card">
+                    <div class="step-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3 data-en="Browse" data-ar="استعراض">استعراض</h3>
+                    <p data-en="Browse available auctions and view detailed vehicle information." 
+                       data-ar="استعرض المزادات المتاحة واطلع على معلومات السيارات بالتفصيل.">
+                       استعرض المزادات المتاحة واطلع على معلومات السيارات بالتفصيل.
+                    </p>
+                </div>
+                <div class="how-step-card">
+                    <div class="step-icon">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <h3 data-en="Bid" data-ar="المزايدة">المزايدة</h3>
+                    <p data-en="Place your bids on vehicles you're interested in before the auction ends." 
+                       data-ar="قدم عروضك على السيارات التي تهتم بها قبل انتهاء المزاد.">
+                       قدم عروضك على السيارات التي تهتم بها قبل انتهاء المزاد.
+                    </p>
+                </div>
+                <div class="how-step-card">
+                    <div class="step-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 data-en="Win & Collect" data-ar="الفوز والاستلام">الفوز والاستلام</h3>
+                    <p data-en="If you win, complete the payment and arrange for vehicle pickup." 
+                       data-ar="إذا فزت، أكمل عملية الدفع ورتب لاستلام السيارة.">
+                       إذا فزت، أكمل عملية الدفع ورتب لاستلام السيارة.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQs Section -->
+    <section class="auction-faqs">
+        <div class="container">
+            <h2 class="section-title" data-en="Frequently Asked Questions" data-ar="الأسئلة الشائعة">الأسئلة الشائعة</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 data-en="Who can participate in car auctions?" data-ar="من يمكنه المشاركة في مزادات السيارات؟">من يمكنه المشاركة في مزادات السيارات؟</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-en="Our car auctions are exclusively available for registered salvage yard owners who have completed the verification process." 
+                           data-ar="مزادات السيارات لدينا متاحة حصرياً لمالكي التشاليح المسجلين الذين أكملوا عملية التحقق.">
+                           مزادات السيارات لدينا متاحة حصرياً لمالكي التشاليح المسجلين الذين أكملوا عملية التحقق.
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 data-en="How do I register my salvage yard?" data-ar="كيف أسجل تشليحي؟">كيف أسجل تشليحي؟</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-en="Click on the 'Register Your Salvage Yard' button and follow the steps. You'll need to provide business documentation, licenses, and complete a verification process." 
+                           data-ar="انقر على زر 'سجل تشليحك' واتبع الخطوات. ستحتاج إلى تقديم وثائق العمل والتراخيص وإكمال عملية التحقق.">
+                           انقر على زر 'سجل تشليحك' واتبع الخطوات. ستحتاج إلى تقديم وثائق العمل والتراخيص وإكمال عملية التحقق.
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 data-en="How do payments work?" data-ar="كيف تعمل عمليات الدفع؟">كيف تعمل عمليات الدفع؟</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-en="If you win an auction, you'll need to pay a 10% deposit within 24 hours and the full amount within 7 days. Payments can be made through bank transfer or other verified payment methods. A 2.5% auction fee will be added to the final bid amount." 
+                           data-ar="إذا فزت بالمزاد، ستحتاج إلى دفع عربون بنسبة 10% خلال 24 ساعة والمبلغ الكامل خلال 7 أيام. يمكن إجراء المدفوعات من خلال التحويل المصرفي أو طرق الدفع الموثقة الأخرى. سيتم إضافة رسوم مزاد بنسبة 2.5% على المبلغ النهائي.">
+                           إذا فزت بالمزاد، ستحتاج إلى دفع عربون بنسبة 10% خلال 24 ساعة والمبلغ الكامل خلال 7 أيام. يمكن إجراء المدفوعات من خلال التحويل المصرفي أو طرق الدفع الموثقة الأخرى. سيتم إضافة رسوم مزاد بنسبة 2.5% على المبلغ النهائي.
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 data-en="Can I inspect vehicles before bidding?" data-ar="هل يمكنني فحص السيارات قبل المزايدة؟">هل يمكنني فحص السيارات قبل المزايدة؟</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-en="Yes, we provide detailed information and photos for each vehicle. For in-person inspections, you can contact us to arrange a viewing appointment for selected vehicles." 
+                           data-ar="نعم، نقدم معلومات وصوراً مفصلة لكل سيارة. للفحص الشخصي، يمكنك الاتصال بنا لترتيب موعد لمعاينة السيارات المختارة.">
+                           نعم، نقدم معلومات وصوراً مفصلة لكل سيارة. للفحص الشخصي، يمكنك الاتصال بنا لترتيب موعد لمعاينة السيارات المختارة.
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 data-en="How do I arrange vehicle pickup?" data-ar="كيف أرتب لاستلام السيارة؟">كيف أرتب لاستلام السيارة؟</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-en="After completing your payment, you'll receive pickup details. You're responsible for arranging transportation, and the vehicle must be collected within 10 days of the auction end." 
+                           data-ar="بعد إكمال الدفع، ستتلقى تفاصيل الاستلام. أنت مسؤول عن ترتيب النقل، ويجب استلام السيارة خلال 10 أيام من انتهاء المزاد.">
+                           بعد إكمال الدفع، ستتلقى تفاصيل الاستلام. أنت مسؤول عن ترتيب النقل، ويجب استلام السيارة خلال 10 أيام من انتهاء المزاد.
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 data-en="Can the vehicle owner reject my winning bid?" data-ar="هل يمكن لمالك السيارة رفض عرضي الفائز؟">هل يمكن لمالك السيارة رفض عرضي الفائز؟</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-en="Yes, the vehicle owner has the right to reject the final bid if they feel the price is not satisfactory. This will be clearly indicated before the auction ends." 
+                           data-ar="نعم، يحق لمالك السيارة رفض العرض النهائي إذا شعر أن السعر غير مرضٍ. سيتم الإشارة إلى ذلك بوضوح قبل انتهاء المزاد.">
+                           نعم، يحق لمالك السيارة رفض العرض النهائي إذا شعر أن السعر غير مرضٍ. سيتم الإشارة إلى ذلك بوضوح قبل انتهاء المزاد.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <img src="images/logo-white.png" alt="تشليح بلس" class="footer-logo">
+                    <div class="logo-text-footer">تشليح بلس</div>
+                    <p data-en="Connecting customers with quality used auto parts across the region." 
+                       data-ar="ربط العملاء بقطع غيار السيارات المستعملة عالية الجودة في جميع أنحاء المنطقة.">
+                       ربط العملاء بقطع غيار السيارات المستعملة عالية الجودة في جميع أنحاء المنطقة.
+                    </p>
+                </div>
+                <div class="footer-links">
+                    <h3 data-en="Quick Links" data-ar="روابط سريعة">روابط سريعة</h3>
+                    <ul>
+                        <li><a href="index.html" data-en="Home" data-ar="الرئيسية">الرئيسية</a></li>
+                        <li><a href="search-results.html" data-en="Search Parts" data-ar="البحث عن قطع">البحث عن قطع</a></li>
+                        <li><a href="auctions.html" data-en="Car Auctions" data-ar="مزادات السيارات">مزادات السيارات</a></li>
+                        <li><a href="salvage-yards.html" data-en="Salvage Yards" data-ar="التشاليح">التشاليح</a></li>
+                        <li><a href="register.html" data-en="Register" data-ar="التسجيل">التسجيل</a></li>
+                        <li><a href="login.html" data-en="Login" data-ar="تسجيل الدخول">تسجيل الدخول</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3 data-en="Contact Us" data-ar="اتصل بنا">اتصل بنا</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> المدينة المنورة, المملكة العربية السعودية</p>
+                    <p><i class="fas fa-phone"></i> +966 123 456 789</p>
+                    <p><i class="fas fa-envelope"></i> info@tashleeh-plus.sa</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-support">
+                    <h3 data-en="Support" data-ar="الدعم">الدعم</h3>
+                    <ul>
+                        <li><a href="faq.html" data-en="FAQ" data-ar="الأسئلة الشائعة">الأسئلة الشائعة</a></li>
+                        <li><a href="contact.html" data-en="Contact Support" data-ar="الاتصال بالدعم">الاتصال بالدعم</a></li>
+                        <li><a href="privacy.html" data-en="Privacy Policy" data-ar="سياسة الخصوصية">سياسة الخصوصية</a></li>
+                        <li><a href="terms.html" data-en="Terms of Service" data-ar="شروط الخدمة">شروط الخدمة</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 تشليح بلس. <span data-en="All Rights Reserved" data-ar="جميع الحقوق محفوظة">جميع الحقوق محفوظة</span>.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/language.js"></script>
+    <script src="js/mobile-menu.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/auctions.js"></script>
+    
+    <!-- إضافة سكريبتات الإصلاح -->
+    <script src="js/mobile-menu-fix.js"></script>
+
+</body>
+</html>

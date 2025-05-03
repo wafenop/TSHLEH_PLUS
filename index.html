@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تشليح بلس - سوق قطع غيار السيارات المستعملة</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Font for Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header id="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="تشليح بلس - سوق قطع غيار السيارات المستعملة">
+                    <span class="logo-text">تشليح بلس</span>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="active" data-en="Home" data-ar="الرئيسية">الرئيسية</a></li>
+                    <li><a href="search-results.html" data-en="Search Parts" data-ar="بحث قطع">بحث قطع</a></li>
+                    <li><a href="auctions.html" data-en="Car Auctions" data-ar="مزادات السيارات">مزادات السيارات</a>
+                    </li>
+                    <li><a href="employee.html" data-en="Employee Portal" data-ar="بوابة الموظفين">بوابة الموظفين</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <div class="language-switcher">
+                    <button id="lang-toggle" data-current="ar">
+                        <span data-en="العربية" data-ar="English">English</span>
+                    </button>
+                </div>
+                <div class="auth-buttons">
+                    <a href="login.html" class="btn btn-outline" data-en="Login" data-ar="تسجيل الدخول">تسجيل الدخول</a>
+                    <a href="register.html" class="btn btn-primary" data-en="Register" data-ar="التسجيل">التسجيل</a>
+                </div>
+                <div class="user-profile hidden">
+                    <a href="profile.html">
+                        <img src="images/user-placeholder.png" alt="الملف الشخصي للمستخدم">
+                    </a>
+                </div>
+            </div>
+            <button class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 data-en="Find the Auto Parts You Need" data-ar="اعثر على قطع غيار السيارات التي تحتاجها">اعثر على
+                    قطع غيار السيارات التي تحتاجها</h1>
+                <p data-en="Connect with salvage yards across the region to find quality used auto parts at the best prices."
+                    data-ar="تواصل مع التشاليح في جميع أنحاء المنطقة للعثور على قطع غيار السيارات المستعملة بأفضل الأسعار.">
+                    تواصل مع التشاليح في جميع أنحاء المنطقة للعثور على قطع غيار السيارات المستعملة بأفضل الأسعار.
+                </p>
+            </div>
+
+            <!-- Search Component -->
+            <div class="search-container">
+                <div class="search-tabs">
+                    <button class="search-tab active" data-tab="chassis" data-en="Chassis Number"
+                        data-ar="رقم الهيكل">رقم الهيكل</button>
+                    <button class="search-tab" data-tab="filter" data-en="Filter Search" data-ar="البحث بالتصفية">البحث
+                        بالتصفية</button>
+                    <button class="search-tab" data-tab="part" data-en="Part Name" data-ar="اسم القطعة">اسم
+                        القطعة</button>
+                </div>
+
+                <div class="search-content">
+                    <!-- Chassis Number Search -->
+                    <div class="search-panel active" id="chassis-search">
+                        <form id="chassis-search-form" action="search-results.html" method="get">
+                            <div class="input-group">
+                                <input type="text" name="chassis" placeholder="أدخل رقم الهيكل"
+                                    data-en-placeholder="Enter chassis number" data-ar-placeholder="أدخل رقم الهيكل">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-search"></i>
+                                    <span data-en="Search" data-ar="بحث">بحث</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Filter-based Search -->
+                    <div class="search-panel" id="filter-search">
+                        <form id="filter-search-form" action="search-results.html" method="get">
+                            <div class="filter-grid">
+                                <div class="form-group">
+                                    <label data-en="Manufacturer" data-ar="الشركة المصنعة">الشركة المصنعة</label>
+                                    <select name="manufacturer">
+                                        <option value="" data-en="Select Manufacturer" data-ar="اختر الشركة المصنعة">
+                                            اختر الشركة المصنعة</option>
+                                        <option value="toyota">تويوتا</option>
+                                        <option value="honda">هوندا</option>
+                                        <option value="ford">فورد</option>
+                                        <option value="bmw">بي إم دبليو</option>
+                                        <option value="mercedes">مرسيدس</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label data-en="Model" data-ar="الموديل">الموديل</label>
+                                    <select name="model">
+                                        <option value="" data-en="Select Model" data-ar="اختر الموديل">اختر الموديل
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label data-en="Year" data-ar="السنة">السنة</label>
+                                    <select name="year">
+                                        <option value="" data-en="Select Year" data-ar="اختر السنة">اختر السنة</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2020">2020</option>
+                                        <option value="2019">2019</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label data-en="Part Category" data-ar="فئة القطعة">فئة القطعة</label>
+                                    <select name="category">
+                                        <option value="" data-en="Select Category" data-ar="اختر الفئة">اختر الفئة
+                                        </option>
+                                        <option value="engine" data-en="Engine" data-ar="المحرك">المحرك</option>
+                                        <option value="transmission" data-en="Transmission" data-ar="ناقل الحركة">ناقل
+                                            الحركة</option>
+                                        <option value="body" data-en="Body Parts" data-ar="قطع الهيكل">قطع الهيكل
+                                        </option>
+                                        <option value="electrical" data-en="Electrical" data-ar="القطع الكهربائية">القطع
+                                            الكهربائية</option>
+                                        <option value="interior" data-en="Interior" data-ar="القطع الداخلية">القطع
+                                            الداخلية</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-search"></i>
+                                <span data-en="Search" data-ar="بحث">بحث</span>
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Part Name Search -->
+                    <div class="search-panel" id="part-search">
+                        <form id="part-search-form" action="search-results.html" method="get">
+                            <div class="input-group">
+                                <input type="text" name="part" placeholder="أدخل اسم القطعة"
+                                    data-en-placeholder="Enter part name" data-ar-placeholder="أدخل اسم القطعة">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-search"></i>
+                                    <span data-en="Search" data-ar="بحث">بحث</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works (Updated to Card Style) -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title" data-en="How It Works" data-ar="كيف يعمل">كيف يعمل</h2>
+            <div class="how-steps-container">
+                <div class="how-step-card">
+                    <div class="step-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3 data-en="Search" data-ar="ابحث">ابحث</h3>
+                    <p data-en="Search for parts by chassis number, filters, or direct part name."
+                        data-ar="ابحث عن القطع حسب رقم الهيكل أو الفلاتر أو اسم القطعة المباشر.">
+                        ابحث عن القطع حسب رقم الهيكل أو الفلاتر أو اسم القطعة المباشر.
+                    </p>
+                </div>
+                <div class="how-step-card">
+                    <div class="step-icon">
+                        <i class="fas fa-compress-arrows-alt"></i>
+                    </div>
+                    <h3 data-en="Compare" data-ar="قارن">قارن</h3>
+                    <p data-en="Compare parts across multiple salvage yards to find the best price and quality."
+                        data-ar="قارن القطع عبر التشاليح المتعددة للعثور على أفضل سعر وجودة.">
+                        قارن القطع عبر التشاليح المتعددة للعثور على أفضل سعر وجودة.
+                    </p>
+                </div>
+                <div class="how-step-card">
+                    <div class="step-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3 data-en="Contact" data-ar="تواصل">تواصل</h3>
+                    <p data-en="Contact the salvage yard directly to inquire about the part."
+                        data-ar="تواصل مع التشليح مباشرة للاستفسار عن القطعة.">
+                        تواصل مع التشليح مباشرة للاستفسار عن القطعة.
+                    </p>
+                </div>
+                <div class="how-step-card">
+                    <div class="step-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 data-en="Purchase" data-ar="اشتري">اشتري</h3>
+                    <p data-en="Complete your purchase and pick up your part."
+                        data-ar="أكمل عملية الشراء واستلم قطعتك.">
+                        أكمل عملية الشراء واستلم قطعتك.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Salvage Yards (Updated with Images) -->
+    <section class="featured-yards">
+        <div class="container">
+            <h2 class="section-title" data-en="Top Rated Salvage Yards" data-ar="التشاليح الأعلى تقييمًا">التشاليح
+                الأعلى تقييمًا</h2>
+            <div class="featured-yards-grid">
+                <div class="featured-yard-card">
+                    <div class="yard-image">
+                        <img src="images/yard-logo-1.png" alt="تشليح المدينة للسيارات">
+                    </div>
+                    <div class="yard-rating">
+                        <span class="rating">4.8</span>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <div class="yard-info">
+                        <h3>تشليح المدينة للسيارات</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> المدينة المنورة, المملكة العربية
+                            السعودية</p>
+                        <p class="speciality" data-en="Specializes in: Toyota, Nissan, Honda"
+                            data-ar="متخصص في: تويوتا، نيسان، هوندا">متخصص في: تويوتا، نيسان، هوندا</p>
+                    </div>
+                    <a href="salvage-yard.html?id=1" class="btn btn-outline yard-btn" data-en="View Profile"
+                        data-ar="عرض الملف">عرض الملف</a>
+                </div>
+                <div class="featured-yard-card">
+                    <div class="yard-image">
+                        <img src="images/yard-logo-2.png" alt="المركز السعودي للتشليح">
+                    </div>
+                    <div class="yard-rating">
+                        <span class="rating">4.6</span>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <div class="yard-info">
+                        <h3>المركز السعودي للتشليح</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> المدينة المنورة, المملكة العربية
+                            السعودية</p>
+                        <p class="speciality" data-en="Specializes in: Luxury brands, German cars"
+                            data-ar="متخصص في: العلامات الفاخرة، السيارات الألمانية">متخصص في: العلامات الفاخرة،
+                            السيارات الألمانية</p>
+                    </div>
+                    <a href="salvage-yard.html?id=2" class="btn btn-outline yard-btn" data-en="View Profile"
+                        data-ar="عرض الملف">عرض الملف</a>
+                </div>
+                <div class="featured-yard-card">
+                    <div class="yard-image">
+                        <img src="images/yard-3.png" alt="تشليح المدينة للقطع والخدمات">
+                    </div>
+                    <div class="yard-rating">
+                        <span class="rating">4.5</span>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <div class="yard-info">
+                        <h3>تشليح المدينة للقطع والخدمات</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> المدينة المنورة, المملكة العربية
+                            السعودية</p>
+                        <p class="speciality" data-en="Specializes in: American cars, SUVs"
+                            data-ar="متخصص في: السيارات الأمريكية، سيارات الدفع الرباعي">متخصص في: السيارات الأمريكية،
+                            سيارات الدفع الرباعي</p>
+                    </div>
+                    <a href="salvage-yard.html?id=3" class="btn btn-outline yard-btn" data-en="View Profile"
+                        data-ar="عرض الملف">عرض الملف</a>
+                </div>
+            </div>
+            <div class="view-more">
+                <a href="salvage-yards.html" class="btn btn-outline" data-en="View All Salvage Yards"
+                    data-ar="عرض جميع التشاليح">عرض جميع التشاليح</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Car Auction Section -->
+    <section class="auction-preview">
+        <div class="container">
+            <h2 class="section-title" data-en="Current Car Auctions" data-ar="مزادات السيارات الحالية">مزادات السيارات
+                الحالية</h2>
+            <p class="section-desc" data-en="Exclusive access for registered salvage yard owners"
+                data-ar="وصول حصري لمالكي التشاليح المسجلين">وصول حصري لمالكي التشاليح المسجلين</p>
+
+            <div class="auctions-grid">
+                <div class="auction-card">
+                    <div class="auction-img">
+                        <img src="images/auction-car-1.jpg" alt="تويوتا كامري 2018">
+                        <div class="time-remaining">
+                            <i class="fas fa-clock"></i>
+                            <span>22:45:10</span>
+                        </div>
+                    </div>
+                    <div class="auction-details">
+                        <h3>تويوتا كامري 2018</h3>
+                        <p class="auction-info">
+                            <span data-en="Current Bid:" data-ar="العرض الحالي:">العرض الحالي:</span>
+                            <span class="bid-amount">38,550 ريال</span>
+                        </p>
+                        <p class="bids-count">
+                            <i class="fas fa-gavel"></i>
+                            <span data-en="8 bids" data-ar="8 عروض">8 عروض</span>
+                        </p>
+                    </div>
+                    <a href="auction-details.html?id=1" class="btn btn-primary" data-en="View Auction"
+                        data-ar="عرض المزاد">عرض المزاد</a>
+                </div>
+                <div class="auction-card">
+                    <div class="auction-img">
+                        <img src="images/auction-car-2.jpg" alt="هوندا أكورد 2017">
+                        <div class="time-remaining">
+                            <i class="fas fa-clock"></i>
+                            <span>46:30:22</span>
+                        </div>
+                    </div>
+                    <div class="auction-details">
+                        <h3>هوندا أكورد 2017</h3>
+                        <p class="auction-info">
+                            <span data-en="Current Bid:" data-ar="العرض الحالي:">العرض الحالي:</span>
+                            <span class="bid-amount">41,200 ريال</span>
+                        </p>
+                        <p class="bids-count">
+                            <i class="fas fa-gavel"></i>
+                            <span data-en="5 bids" data-ar="5 عروض">5 عروض</span>
+                        </p>
+                    </div>
+                    <a href="auction-details.html?id=2" class="btn btn-primary" data-en="View Auction"
+                        data-ar="عرض المزاد">عرض المزاد</a>
+                </div>
+                <div class="auction-card">
+                    <div class="auction-img">
+                        <img src="images/auction-car-3.jpg" alt="نيسان التيما 2019">
+                        <div class="time-remaining">
+                            <i class="fas fa-clock"></i>
+                            <span>12:15:40</span>
+                        </div>
+                    </div>
+                    <div class="auction-details">
+                        <h3>نيسان التيما 2019</h3>
+                        <p class="auction-info">
+                            <span data-en="Current Bid:" data-ar="العرض الحالي:">العرض الحالي:</span>
+                            <span class="bid-amount">35,800 ريال</span>
+                        </p>
+                        <p class="bids-count">
+                            <i class="fas fa-gavel"></i>
+                            <span data-en="12 bids" data-ar="12 عروض">12 عروض</span>
+                        </p>
+                    </div>
+                    <a href="auction-details.html?id=3" class="btn btn-primary" data-en="View Auction"
+                        data-ar="عرض المزاد">عرض المزاد</a>
+                </div>
+            </div>
+            <div class="view-more">
+                <a href="auctions.html" class="btn btn-outline" data-en="View All Auctions"
+                    data-ar="عرض جميع المزادات">عرض جميع المزادات</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Parts Section (New Section) -->
+    <section class="latest-parts">
+        <div class="container">
+            <h2 class="section-title" data-en="Latest Added Parts" data-ar="أحدث القطع المضافة">أحدث القطع المضافة</h2>
+            <div class="latest-parts-grid">
+                <div class="part-card">
+                    <div class="part-images">
+                        <div class="main-image">
+                            <img src="images/parts/engine-cover.png" alt="محرك تويوتا كامري 2018">
+                        </div>
+                        <div class="condition excellent">
+                            <span data-en="Excellent" data-ar="ممتازة">ممتازة</span>
+                        </div>
+                    </div>
+                    <div class="part-details">
+                        <h3>محرك تويوتا كامري 2018</h3>
+                        <div class="part-meta">
+                            <div class="car-info">تويوتا كامري 2018</div>
+                            <div class="yard-info">
+                                <a href="salvage-yard.html?id=1">تشليح المدينة للسيارات</a>
+                                <div class="yard-rating">
+                                    <i class="fas fa-star"></i>
+                                    <span>4.8</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="part-price-actions">
+                            <div class="price">4566 ريال</div>
+                            <div class="actions">
+                                <a href="part-details.html?id=1" class="btn btn-primary" data-en="View Details"
+                                    data-ar="عرض التفاصيل">عرض التفاصيل</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="part-card">
+                    <div class="part-images">
+                        <div class="main-image">
+                            <img src="images/parts/transmission.png" alt="ناقل حركة هوندا أكورد 2017">
+                        </div>
+                        <div class="condition good">
+                            <span data-en="Good" data-ar="جيدة">جيدة</span>
+                        </div>
+                    </div>
+                    <div class="part-details">
+                        <h3>ناقل حركة هوندا أكورد 2017</h3>
+                        <div class="part-meta">
+                            <div class="car-info">هوندا أكورد 2017</div>
+                            <div class="yard-info">
+                                <a href="salvage-yard.html?id=2">المركز السعودي للتشليح</a>
+                                <div class="yard-rating">
+                                    <i class="fas fa-star"></i>
+                                    <span>4.6</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="part-price-actions">
+                            <div class="price">3,723 ريال</div>
+                            <div class="actions">
+                                <a href="part-details.html?id=2" class="btn btn-primary" data-en="View Details"
+                                    data-ar="عرض التفاصيل">عرض التفاصيل</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="part-card">
+                    <div class="part-images">
+                        <div class="main-image">
+                            <img src="images/parts/headlight.png" alt="مصباح أمامي نيسان التيما 2019">
+                        </div>
+                        <div class="condition average">
+                            <span data-en="Average" data-ar="متوسطة">متوسطة</span>
+                        </div>
+                    </div>
+                    <div class="part-details">
+                        <h3>شمعة أمامي يسار نيسان التيما 2019</h3>
+                        <div class="part-meta">
+                            <div class="car-info">نيسان التيما 2019</div>
+                            <div class="yard-info">
+                                <a href="salvage-yard.html?id=3">تشليح المدينة للقطع والخدمات</a>
+                                <div class="yard-rating">
+                                    <i class="fas fa-star"></i>
+                                    <span>4.5</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="part-price-actions">
+                            <div class="price">460 ريال</div>
+                            <div class="actions">
+                                <a href="part-details.html?id=3" class="btn btn-primary" data-en="View Details"
+                                    data-ar="عرض التفاصيل">عرض التفاصيل</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="view-more">
+                <a href="search-results.html" class="btn btn-outline" data-en="View More Parts"
+                    data-ar="عرض المزيد من القطع">عرض المزيد من القطع</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Us Section -->
+    <section class="join-us">
+        <div class="container">
+            <div class="join-content">
+                <h2 data-en="Are you a Salvage Yard Owner?" data-ar="هل أنت مالك تشليح؟">هل أنت مالك تشليح؟</h2>
+                <p data-en="Join our marketplace to expand your customer base and increase your sales."
+                    data-ar="انضم إلى سوقنا لتوسيع قاعدة عملائك وزيادة مبيعاتك.">
+                    انضم إلى سوقنا لتوسيع قاعدة عملائك وزيادة مبيعاتك.
+                </p>
+                <a href="register-yard.html" class="btn btn-primary" data-en="Join as Salvage Yard"
+                    data-ar="انضم كتشليح">انضم كتشليح</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم وصول الموظفين -->
+    <section class="employee-access">
+        <div class="container">
+            <div class="employee-access-content">
+                <h2 data-en="Employee Access" data-ar="وصول الموظفين">وصول الموظفين</h2>
+                <p data-en="Access the employee portal to register vehicles and manage parts inventory."
+                    data-ar="قم بالوصول إلى بوابة الموظفين لتسجيل السيارات وإدارة مخزون القطع.">
+                    قم بالوصول إلى بوابة الموظفين لتسجيل السيارات وإدارة مخزون القطع.
+                </p>
+                <a href="employee.html" class="btn btn-primary" data-en="Access Employee Portal"
+                    data-ar="الدخول لبوابة الموظفين">الدخول لبوابة الموظفين</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <img src="images/logo-white.png" alt="تشليح بلس" class="footer-logo">
+                    <div class="logo-text-footer">تشليح بلس</div>
+                    <p data-en="Connecting customers with quality used auto parts across the region."
+                        data-ar="ربط العملاء بقطع غيار السيارات المستعملة عالية الجودة في جميع أنحاء المنطقة.">
+                        ربط العملاء بقطع غيار السيارات المستعملة عالية الجودة في جميع أنحاء المنطقة.
+                    </p>
+                </div>
+                <div class="footer-links">
+                    <h3 data-en="Quick Links" data-ar="روابط سريعة">روابط سريعة</h3>
+                    <ul>
+                        <li><a href="index.html" data-en="Home" data-ar="الرئيسية">الرئيسية</a></li>
+                        <li><a href="search-results.html" data-en="Search Parts" data-ar="البحث عن قطع">البحث عن قطع</a>
+                        </li>
+                        <li><a href="auctions.html" data-en="Car Auctions" data-ar="مزادات السيارات">مزادات السيارات</a>
+                        </li>
+                        <li><a href="salvage-yards.html" data-en="Salvage Yards" data-ar="التشاليح">التشاليح</a></li>
+                        <li><a href="register.html" data-en="Register" data-ar="التسجيل">التسجيل</a></li>
+                        <li><a href="login.html" data-en="Login" data-ar="تسجيل الدخول">تسجيل الدخول</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3 data-en="Contact Us" data-ar="اتصل بنا">اتصل بنا</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> المدينة المنورة, المملكة العربية السعودية</p>
+                    <p><i class="fas fa-phone"></i> +966 123 456 789</p>
+                    <p><i class="fas fa-envelope"></i> info@tashleeh-plus.sa</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-support">
+                    <h3 data-en="Support" data-ar="الدعم">الدعم</h3>
+                    <ul>
+                        <li><a href="faq.html" data-en="FAQ" data-ar="الأسئلة الشائعة">الأسئلة الشائعة</a></li>
+                        <li><a href="contact.html" data-en="Contact Support" data-ar="الاتصال بالدعم">الاتصال بالدعم</a>
+                        </li>
+                        <li><a href="privacy.html" data-en="Privacy Policy" data-ar="سياسة الخصوصية">سياسة الخصوصية</a>
+                        </li>
+                        <li><a href="terms.html" data-en="Terms of Service" data-ar="شروط الخدمة">شروط الخدمة</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 تشليح بلس. <span data-en="All Rights Reserved" data-ar="جميع الحقوق محفوظة">جميع الحقوق
+                        محفوظة</span>.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/language.js"></script>
+    <script src="js/mobile-menu.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/home.js"></script>
+
+    <!-- إضافة سكريبتات الإصلاح -->
+    <script src="js/mobile-menu-fix.js"></script>
+    <script src="js/homepage-buttons-fix.js"></script>
+</body>
+
+</html>
