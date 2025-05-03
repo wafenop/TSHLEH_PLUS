@@ -1,7 +1,14 @@
 /*
    ملف CSS لصفحة الموظف - إدارة القطع وتسجيل السيارات
    تشليح بلس - سوق قطع غيار السيارات المستعملة
+   نسخة متوافقة مع الأجهزة المحمولة
 */
+
+/* ===== إصلاحات أساسية للجوال ===== */
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
 
 /* ===== عنوان الصفحة ===== */
 .page-title {
@@ -9,6 +16,7 @@
     color: white;
     padding: 2rem 0;
     margin-bottom: 2rem;
+    width: 100%;
 }
 
 .page-title h1 {
@@ -40,6 +48,8 @@
 /* ===== قسم لوحة تحكم الموظف ===== */
 .employee-dashboard-section {
     padding: 2rem 0 4rem;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 .employee-dashboard-container {
@@ -47,6 +57,9 @@
     grid-template-columns: 280px 1fr;
     gap: 2rem;
     margin-bottom: 3rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 /* ===== الشريط الجانبي ===== */
@@ -58,6 +71,8 @@
     position: sticky;
     top: 100px;
     height: fit-content;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .employee-info {
@@ -100,10 +115,6 @@
     text-align: center;
     margin-bottom: 0;
 }
-
-    .employee-name, .employee-role {
-        text-align: center;
-    }
 
 /* ===== اختيار التشليح ===== */
 .employee-yard-selection {
@@ -178,6 +189,8 @@ html[lang="en"] .employee-nav a i {
     border-radius: 0.5rem;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     padding: 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .content-header {
@@ -221,6 +234,8 @@ html[lang="en"] .employee-nav a i {
     border: 1px solid var(--gray-200);
     border-radius: 0.5rem;
     padding: 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .form-section h3 {
@@ -263,6 +278,7 @@ html[lang="en"] .employee-nav a i {
     border: 1px solid var(--gray-300);
     border-radius: var(--border-radius-md);
     transition: all 0.2s ease;
+    box-sizing: border-box;
 }
 
 .form-control:focus {
@@ -410,11 +426,16 @@ html[lang="en"] .employee-nav a i {
 /* ===== جداول السيارات والقطع المضافة حديثاً ===== */
 .recent-vehicles, .recent-parts {
     margin-top: 3rem;
+    width: 100%;
 }
 
 .vehicles-table-container, .parts-table-container {
     overflow-x: auto;
     margin-bottom: 1.5rem;
+    width: 100%;
+    border-radius: 0.5rem;
+    border: 1px solid var(--gray-200);
+    -webkit-overflow-scrolling: touch;
 }
 
 .vehicles-table, .parts-table {
@@ -664,29 +685,29 @@ html[lang="en"] .notification-content i {
 
 @media (max-width: 768px) {
     .employee-info {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: row;
+        text-align: right;
         align-items: center;
     }
     
+    .employee-avatar {
+        margin-left: 0.75rem;
+        margin-bottom: 0;
+        width: 60px;
+        height: 60px;
+    }
+    
+    .employee-name, .employee-role {
+        text-align: right;
+    }
     
     html[lang="en"] .employee-info {
         text-align: left;
     }
     
-    .employee-avatar {
-        margin-bottom: 0.75rem;
-        margin-left: 0;
-    }
-    
-    
     html[lang="en"] .employee-avatar {
         margin-left: 0;
-        margin-right: 1rem;
-    }
-    
-    .employee-name, .employee-role {
-        text-align: right;
+        margin-right: 0.75rem;
     }
     
     html[lang="en"] .employee-name, html[lang="en"] .employee-role {
@@ -711,6 +732,23 @@ html[lang="en"] .notification-content i {
     
     .form-actions button {
         width: 100%;
+        margin-bottom: 0.5rem;
+    }
+    
+    /* إضافة تلميح للتمرير الأفقي في الجداول */
+    .vehicles-table-container::before,
+    .parts-table-container::before {
+        content: "← مرر →";
+        display: block;
+        text-align: center;
+        font-size: 0.8rem;
+        color: #777;
+        margin-bottom: 0.5rem;
+    }
+    
+    html[lang="en"] .vehicles-table-container::before,
+    html[lang="en"] .parts-table-container::before {
+        content: "← Scroll →";
     }
 }
 
@@ -724,11 +762,50 @@ html[lang="en"] .notification-content i {
     }
     
     .employee-content {
-        padding: 1rem;
+        padding: 0.75rem;
     }
     
     .notification {
         max-width: 90%;
         width: 90%;
+        right: 5%;
+        left: 5%;
+        transform: translateY(100px);
+    }
+    
+    .notification.show {
+        transform: translateY(0);
+    }
+    
+    html[lang="en"] .notification {
+        transform: translateY(100px);
+    }
+    
+    html[lang="en"] .notification.show {
+        transform: translateY(0);
+    }
+    
+    /* ضبط حجم الخط وأبعاد العناصر للشاشات الصغيرة جدًا */
+    .employee-name {
+        font-size: 1rem;
+    }
+    
+    .employee-role {
+        font-size: 0.8rem;
+    }
+    
+    .form-section h3 {
+        font-size: 1.1rem;
+    }
+    
+    /* تحسين نماذج الإدخال على الشاشات الصغيرة */
+    input, select, textarea, button {
+        font-size: 16px; /* لمنع تكبير iOS التلقائي */
+    }
+    
+    /* زيادة حجم منطقة اللمس للأزرار */
+    .action-btn {
+        width: 36px;
+        height: 36px;
     }
 }
