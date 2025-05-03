@@ -1,6 +1,7 @@
 /**
  * employee.js - ملف JavaScript لصفحة الموظف
  * تشليح بلس - سوق قطع غيار السيارات المستعملة
+ * نسخة محسنة للتوافق مع الأجهزة المحمولة
  */
 
 // تأكيد تحميل الملف
@@ -9,6 +10,9 @@ console.log('تم تحميل employee.js بنجاح');
 // تنفيذ الكود عند تحميل الصفحة
 document.addEventListener('DOMContentLoaded', function() {
     console.log('تم تحميل صفحة الموظف بالكامل');
+    
+    // إصلاح مشكلة توافق الصفحة مع الأجهزة المحمولة
+    fixMobileLayout();
     
     // تهيئة اختيار التشليح
     setupYardSelection();
@@ -33,7 +37,156 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // تهيئة روابط القائمة الجانبية غير النشطة
     setupInactiveNavLinks();
+    
+    // مراقبة تغيير حجم النافذة لإعادة الضبط
+    window.addEventListener('resize', function() {
+        fixMobileLayout();
+    });
 });
+
+// ===== إصلاح مشكلة توافق الصفحة مع الأجهزة المحمولة =====
+function fixMobileLayout() {
+    // التأكد من عدم تجاوز العناصر لعرض الشاشة
+    document.body.style.overflowX = 'hidden';
+    document.documentElement.style.overflowX = 'hidden';
+    
+    // التأكد من أن جميع العناصر الرئيسية لها عرض مناسب
+    const mainElements = [
+        '.employee-dashboard-container',
+        '.employee-sidebar',
+        '.employee-content',
+        '.recent-vehicles',
+        '.recent-parts',
+        '.vehicles-table-container',
+        '.parts-table-container',
+        '.form-section',
+        '.parts-form-container',
+        '.vehicle-form-container'
+    ];
+    
+    // ضبط الخصائص لكل عنصر
+    mainElements.forEach(selector => {
+        const elements = document.querySelectorAll(selector);
+        elements.forEach(element => {
+            element.style.maxWidth = '100%';
+            element.style.boxSizing = 'border-box';
+        });
+    });
+    
+    // تحسين عرض الجداول على الأجهزة المحمولة
+    fixTablesForMobile();
+    
+    // تحسين النماذج للأجهزة المحمولة
+    if (window.innerWidth <= 768) {
+        optimizeFormsForMobile();
+    }
+    
+    // إضافة دعم RTL للأجهزة المحمولة
+    if (document.documentElement.dir === 'rtl') {
+        fixRTLForMobile();
+    }
+}
+
+// ===== تحسين عرض الجداول على الأجهزة المحمولة =====
+function fixTablesForMobile() {
+    const tableContainers = document.querySelectorAll('.vehicles-table-container, .parts-table-container');
+    
+    tableContainers.forEach(container => {
+        // التحقق من الحاجة للتمرير الأفقي
+        const table = container.querySelector('table');
+        const containerWidth = container.clientWidth;
+        const tableWidth = table ? table.scrollWidth : 0;
+        
+        // إذا كان الجدول أعرض من الحاوية
+        if (tableWidth > containerWidth) {
+            // تأكد من إمكانية التمرير
+            container.style.overflowX = 'auto';
+            container.style.WebkitOverflowScrolling = 'touch';
+            
+            // إضافة تلميح للتمرير إذا لم يكن موجوداً
+            if (!container.previousElementSibling || !container.previousElementSibling.classList.contains('table-scroll-hint')) {
+                const scrollHint = document.createElement('div');
+                scrollHint.className = 'table-scroll-hint';
+                scrollHint.textContent = document.documentElement.dir === 'rtl' ? 
+                    '← مرر للمزيد →' : '← Scroll for more →';
+                scrollHint.style.textAlign = 'center';
+                scrollHint.style.fontSize = '0.8rem';
+                scrollHint.style.color = '#777';
+                scrollHint.style.marginBottom = '0.5rem';
+                
+                container.parentNode.insertBefore(scrollHint, container);
+            }
+        }
+    });
+}
+
+// ===== تحسين النماذج للأجهزة المحمولة =====
+function optimizeFormsForMobile() {
+    // تعديل حجم الخط لجميع النماذج لمنع تكبير iOS التلقائي
+    const formInputs = document.querySelectorAll('input, select, textarea');
+    formInputs.forEach(input => {
+        input.style.fontSize = '16px';
+    });
+    
+    // تعديل أزرار الإرسال للنماذج
+    const formActions = document.querySelectorAll('.form-actions');
+    formActions.forEach(actions => {
+        if (window.innerWidth <= 768) {
+            actions.style.flexDirection = 'column';
+            
+            const buttons = actions.querySelectorAll('button');
+            buttons.forEach(button => {
+                button.style.width = '100%';
+                button.style.marginBottom = '0.5rem';
+            });
+        } else {
+            actions.style.flexDirection = 'row';
+            
+            const buttons = actions.querySelectorAll('button');
+            buttons.forEach(button => {
+                button.style.width = 'auto';
+                button.style.marginBottom = '0';
+            });
+        }
+    });
+    
+    // تحسين حجم منطقة رفع الصور
+    const uploadDropzones = document.querySelectorAll('.upload-dropzone');
+    uploadDropzones.forEach(dropzone => {
+        if (window.innerWidth <= 768) {
+            dropzone.style.padding = '1.5rem 1rem';
+        } else {
+            dropzone.style.padding = '2rem';
+        }
+    });
+}
+
+// ===== إصلاح دعم RTL للأجهزة المحمولة =====
+function fixRTLForMobile() {
+    // التأكد من الاتجاه الصحيح للعناصر في وضع RTL
+    document.querySelectorAll('.employee-dashboard-container, .form-grid, .vehicles-table, .parts-table').forEach(element => {
+        element.style.direction = 'rtl';
+        element.style.textAlign = 'right';
+    });
+    
+    // التأكد من محاذاة النص بشكل صحيح في الجداول
+    document.querySelectorAll('.vehicles-table th, .vehicles-table td, .parts-table th, .parts-table td').forEach(cell => {
+        cell.style.textAlign = 'right';
+    });
+    
+    // تعديل مظهر معلومات الموظف
+    const employeeInfo = document.querySelector('.employee-info');
+    if (employeeInfo && window.innerWidth <= 768) {
+        employeeInfo.style.flexDirection = 'row';
+        employeeInfo.style.textAlign = 'right';
+        
+        const avatar = employeeInfo.querySelector('.employee-avatar');
+        if (avatar) {
+            avatar.style.marginLeft = '0.75rem';
+            avatar.style.marginBottom = '0';
+        }
+    }
+}
 
 // ===== تهيئة اختيار التشليح =====
 function setupYardSelection() {
@@ -92,6 +245,11 @@ function setupSectionToggle() {
             // إضافة الفئة النشطة للزر والقسم المستهدف
             this.classList.add('active');
             targetSection.classList.add('active');
+            
+            // التمرير إلى القسم المستهدف على الأجهزة المحمولة
+            if (window.innerWidth <= 768) {
+                targetSection.scrollIntoView({behavior: 'smooth', block: 'start'});
+            }
         });
     });
 }
@@ -156,35 +314,11 @@ function setupPartsForm() {
 // ===== تهيئة نموذج تسجيل السيارات =====
 function setupVehicleForm() {
     const vehicleForm = document.getElementById('vehicle-registration-form');
-    const manufacturerSelect = document.getElementById('manufacturer');
-    const modelSelect = document.getElementById('model');
     
-    if (!vehicleForm || !manufacturerSelect || !modelSelect) {
-        console.warn('قد لا تكون بعض عناصر نموذج تسجيل السيارات موجودة');
+    if (!vehicleForm) {
+        console.warn('نموذج تسجيل السيارات غير موجود');
         return;
     }
-    
-    // تهيئة القوائم المنسدلة المتسلسلة (الشركة المصنعة والموديل)
-    manufacturerSelect.addEventListener('change', function() {
-        // إفراغ قائمة الموديلات
-        modelSelect.innerHTML = '';
-        
-        // إضافة الخيار الافتراضي
-        addOption(modelSelect, '', 'Select Model', 'اختر الموديل');
-        
-        // الحصول على الشركة المصنعة المحددة
-        const manufacturer = this.value;
-        
-        if (manufacturer) {
-            // إضافة الموديلات بناءً على الشركة المصنعة
-            const models = getModelsForManufacturer(manufacturer);
-            
-            // إضافة خيارات الموديلات
-            models.forEach(model => {
-                addOption(modelSelect, model.value, model.en, model.ar);
-            });
-        }
-    });
     
     // معالجة إرسال نموذج السيارات
     vehicleForm.addEventListener('submit', function(event) {
@@ -447,6 +581,9 @@ function setupSingleUploadArea(inputId) {
 function updateImagePreview(fileInput, previewContainer) {
     if (!fileInput || !previewContainer) return;
     
+    // إفراغ حاوية المعاينة
+    previewContainer.innerHTML = '';
+    
     // التحقق من عدد الملفات (بحد أقصى 5 صور)
     const maxFiles = 5;
     const filesToShow = Array.from(fileInput.files).slice(0, maxFiles);
@@ -501,7 +638,7 @@ function updateImagePreview(fileInput, previewContainer) {
                     </button>
                 </div>
                 <div class="preview-info">
-                    <span class="preview-name">${file.name.substring(0, 15)}${file.name.length > 15 ? '...' : ''}</span>
+<span class="preview-name">${file.name.substring(0, 15)}${file.name.length > 15 ? '...' : ''}</span>
                 </div>
             `;
             
@@ -578,6 +715,15 @@ function setupActionButtons() {
             showUnavailableFeatureError();
         });
     });
+    
+    // تحسين منطقة اللمس على الأجهزة المحمولة
+    if (window.innerWidth <= 768) {
+        const actionButtons = document.querySelectorAll('.action-btn');
+        actionButtons.forEach(btn => {
+            btn.style.minHeight = '36px';
+            btn.style.minWidth = '36px';
+        });
+    }
 }
 
 // ===== تهيئة روابط القائمة الجانبية غير النشطة =====
@@ -674,6 +820,9 @@ function showNotification(message, type = 'info') {
         }
     }
     
+    // تكييف موضع الإشعار بناءً على حجم الشاشة
+    adjustNotificationPosition(notification);
+    
     // إظهار الإشعار
     setTimeout(() => {
         notification.classList.add('show');
@@ -683,6 +832,31 @@ function showNotification(message, type = 'info') {
     setTimeout(() => {
         hideNotification(notification);
     }, 5000);
+}
+
+// ===== ضبط موضع الإشعار حسب حجم الشاشة =====
+function adjustNotificationPosition(notification) {
+    if (window.innerWidth <= 576) {
+        // للشاشات الصغيرة جدًا
+        notification.style.maxWidth = '90%';
+        notification.style.width = '90%';
+        notification.style.right = '5%';
+        notification.style.left = '5%';
+        notification.style.top = '20px';
+    } else if (window.innerWidth <= 768) {
+        // للشاشات المتوسطة
+        notification.style.maxWidth = '350px';
+        notification.style.width = 'auto';
+        notification.style.top = '20px';
+        
+        if (document.documentElement.dir === 'rtl') {
+            notification.style.right = '20px';
+            notification.style.left = 'auto';
+        } else {
+            notification.style.left = '20px';
+            notification.style.right = 'auto';
+        }
+    }
 }
 
 // ===== إخفاء الإشعار =====
@@ -710,5 +884,32 @@ function getNotificationIcon(type) {
             return 'fa-exclamation-triangle';
         default:
             return 'fa-info-circle';
+    }
+}
+
+// ===== إضافة مستمع حدث لتحسين العرض عند تغيير حجم النافذة =====
+window.addEventListener('resize', function() {
+    // تحديث الإشعارات الحالية
+    const notification = document.querySelector('.notification.show');
+    if (notification) {
+        adjustNotificationPosition(notification);
+    }
+    
+    // تحديث الجداول
+    fixTablesForMobile();
+    
+    // تحديث النماذج
+    if (window.innerWidth <= 768) {
+        optimizeFormsForMobile();
+    }
+});
+
+// ===== مساعدة المطورين في وضع التصحيح =====
+function debug(message) {
+    // اضبط هذا المتغير إلى true لعرض رسائل التصحيح
+    const enableDebug = false;
+    
+    if (enableDebug && console) {
+        console.log('[DEBUG] ' + message);
     }
 }
